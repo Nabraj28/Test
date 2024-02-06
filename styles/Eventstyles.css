@@ -1,14 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 
-.body {
+.bodymain {
     padding: 20px 30px;
+    height: 1000vh;
+}
+
+.body {
     display: flex;
 }
 
 .part1 {
     width: 50%;
-    height: 800vh;
+    /* height: 800vh; */
     display: flex;
     gap: 36px;
     flex-direction: column;
@@ -202,4 +206,19 @@ h1 {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 18px;
+}
+
+.second {
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.upcoming {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 25px;
 }

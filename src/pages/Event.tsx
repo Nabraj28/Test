@@ -1,4 +1,4 @@
-// import React from 'react'
+
 import "../../styles/Eventstyles.css"
 import Button from "../components/Button"
 import { FiShare2 } from "react-icons/fi";
@@ -11,12 +11,13 @@ import { Artists } from "../components/Artists";
 import ReadMore from "../components/Readmore";
 import { Gallery } from "../components/Gallery";
 import { Video } from "../components/Video";
+import { Cardslider } from "../components/Cardslider";
 
 
 
 export const Event = () => {
     return (
-        <div>
+        <div className="bodymain" >
             <div className="body" >
                 <div className="part1" >
                     <p className="htext">
@@ -154,7 +155,10 @@ export const Event = () => {
                 </div >
                 <div className="part2" ></div>
             </div >
-            <div></div>
+            <div className="second" >
+                <p className="upcoming" >Upcoming Events</p>
+                <Cardslider />
+            </div>
         </div>
     )
 }
