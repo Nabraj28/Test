@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.txt {
+    font-family: 'Lora', sans-serif;
+
+}
+
+.about {
+    font-family: 'Poppins', sans-serif;
+    text-align: justify;
+}

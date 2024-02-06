@@ -8,7 +8,7 @@
 
 .part1 {
     width: 50%;
-    height: 300vh;
+    height: 800vh;
     display: flex;
     gap: 36px;
     flex-direction: column;
@@ -91,10 +91,10 @@ h1 {
     font-weight: 400;
     font-size: 18px;
     color: #865CD0;
+    cursor: pointer;
 }
 
 .acon {
-    height: 2000px;
     padding: 20px;
     box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.1);
     gap: 36px;
@@ -105,6 +105,12 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.scontainer {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
 }
 
 .space {
@@ -121,4 +127,79 @@ h1 {
 .divider {
     height: 1px;
     background-color: #54545899;
+}
+
+.half {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.num {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.tandc {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.terms {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    text-align: justify;
+    color: #000;
+
+}
+
+.profile {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.profilemain {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.profilecon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.namey {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.sub {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.follow {
+    padding: 0px 25px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
 }
