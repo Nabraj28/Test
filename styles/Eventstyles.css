@@ -36,7 +36,7 @@
 .imgcon {
     width: 100%;
     height: 200px;
-    background-image: url('/ts.jpg');
+    /* background-image: url('/ts.jpg'); */
     background-position: center;
     background-size: cover;
     border-radius: 10px;
