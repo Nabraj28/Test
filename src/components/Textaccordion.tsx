@@ -6,7 +6,7 @@ import { AccordionProps } from '../types';
 
 
 
-const Accordion = ({ title, children, showIcon = true }: AccordionProps) => {
+const Textaccordion = ({ children, showIcon = true }: AccordionProps) => {
     const [isOpen, setIsOpen] = useState(true);
 
     const toggleAccordion = () => {
@@ -15,17 +15,19 @@ const Accordion = ({ title, children, showIcon = true }: AccordionProps) => {
 
     return (
         <div className="accordion">
-            <div className="accordion-header" onClick={toggleAccordion}>
-                <span className="accordion-title">{title}</span>
-                {showIcon && (isOpen ? <FaChevronUp className='updown' /> : <FaChevronDown className='updown' />)}
+            <div className="txtaccordion-header" onClick={toggleAccordion}>
+                <span className="txtaccordion-title">{isOpen ? "Hide Details" : "View Details"}</span>
+                {showIcon && (isOpen ? <FaChevronUp size={15} /> : <FaChevronDown size={15} />)}
             </div>
             {isOpen && (
                 <div className="accordion-content">
-                    {children}
+                    <span className='txtaccordion-content' >
+                        {children}
+                    </span>
                 </div>
             )}
         </div>
     );
 };
 
-export default Accordion;
+export default Textaccordion;

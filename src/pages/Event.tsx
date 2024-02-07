@@ -12,6 +12,8 @@ import ReadMore from "../components/Readmore";
 import { Gallery } from "../components/Gallery";
 import { Video } from "../components/Video";
 import { Cardslider } from "../components/Cardslider";
+import { Footer } from "../components/Footer";
+import Ticket from "../components/Ticket";
 
 
 
@@ -28,8 +30,8 @@ export const Event = () => {
                         <div className="imgcon" ></div>
                         <div className="details">
                             <div className="title" >
-                                <h1>Taylor Swift in Nepal</h1>
-                                <FiShare2 size={30} color="#865CD0" />
+                                <p className="h1">Taylor Swift in Nepal</p>
+                                <FiShare2 className="sharebtn" color="#865CD0" />
                             </div>
                             <div className="btncon" >
                                 <Button color="#f43434" >
@@ -49,14 +51,14 @@ export const Event = () => {
                             </div>
                             <div className="seprate">
                                 <div className="first" >
-                                    <RiCalendarEventFill size={26} color="#865CD0" />
+                                    <RiCalendarEventFill className="local" color="#865CD0" />
                                     <p className="ftxt" >Oct 4, 2023 - Oct 10, 2023</p>
                                 </div>
                                 <p className="ltxt" >Add to Calendar</p>
                             </div>
                             <div className="seprate">
                                 <div className="first" >
-                                    <SlLocationPin size={26} color="#865CD0" />
+                                    <SlLocationPin className="local" color="#865CD0" />
                                     <p className="ftxt" >Lakeside-06, Pokhara</p>
                                 </div>
                                 <p className="ltxt" >View on Map</p>
@@ -64,14 +66,14 @@ export const Event = () => {
                         </div>
                     </div>
                     <div className="acon">
-                        <Accordion title="More Information" >
+                        <Accordion showIcon title="More Information" >
                             <div className="container" >
                                 <div className="space">
                                     <img src="/Pop.png" alt="Game" className="image" />
                                     <p className="ftxt" >Outdoor Events</p>
                                 </div>
                                 <div className="space">
-                                    <img src="/Time.png" alt="Game" className="image" />
+                                    <img src="/timer.png" alt="" className="image" />
                                     <p className="ftxt" >11 AM - 5 PM</p>
                                 </div>
                                 <div className="space">
@@ -85,28 +87,28 @@ export const Event = () => {
                             </div>
                         </Accordion>
                         <div className="divider"></div>
-                        <Accordion title="Click on Interested to stay updated about this event." >
+                        <Accordion showIcon title="Click on Interested to stay updated about this event." >
                             <div className="scontainer" >
                                 <div className="half" >
                                     <div className="line" >
                                         <AiFillLike size={25} color="#865CD0" />
                                         <p className="num" >1000</p>
                                     </div>
-                                    <p className="ftxt" >People who have shown interest recently</p>
+                                    <p className="ftxxt" >People who have shown interest recently</p>
                                 </div>
                                 <div>
                                     <Outlinebutton color="#865CD0">
-                                        <p className="ltxt" >Intrested?</p>
+                                        <p className="ltxxt" >Intrested?</p>
                                     </Outlinebutton>
                                 </div>
                             </div>
                         </Accordion>
                         <div className="divider"></div>
-                        <Accordion title="Artists" >
+                        <Accordion showIcon title="Artists" >
                             <Artists />
                         </Accordion>
                         <div className="divider"></div>
-                        <Accordion title="Read More" >
+                        <Accordion showIcon title="Read More" >
                             <ReadMore children="Lorem ipsum dolor sit amet, consectetur
                              adipiscing elit, sed do eiusmod tempor incididunt ut labore
                             et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -118,15 +120,15 @@ export const Event = () => {
                             irure dolor in reprehenderit in voluptate velit esse cillum dolore..... " />
                         </Accordion>
                         <div className="divider"></div>
-                        <Accordion title="Gallery" >
+                        <Accordion showIcon title="Gallery" >
                             <Gallery />
                         </Accordion>
                         <div className="divider"></div>
-                        <Accordion title="Video" >
+                        <Accordion showIcon title="Video" >
                             <Video />
                         </Accordion>
                         <div className="divider"></div>
-                        <Accordion title="Terms and Conditions" >
+                        <Accordion showIcon title="Terms and Conditions" >
                             <div className="tandc" >
                                 <p className="terms" >
                                     1. Lorem ipsum dolor sit amet.
@@ -140,12 +142,16 @@ export const Event = () => {
                         <div className="divider"></div>
                         <div className="profilemain" >
                             <div className="profilecon" >
-                                <img src="/mask.jpg" alt="" className="profile" />
-                                <p className="namey" >Dattebaiyo</p>
-                                <div>
-                                    <p className="sub" >50 followers</p>
+                                <div className="imgdetsep">
+                                    <img src="/mask.jpg" alt="" className="profile" />
+                                    <div className="smgap">
+                                        <p className="namey" >Dattebaiyo</p>
+                                        <div>
+                                            <p className="sub" >50 followers</p>
+                                        </div>
+                                        <p className="sub" >Organizer</p>
+                                    </div>
                                 </div>
-                                <p className="sub" >Organizer</p>
                                 <Outlinebutton color="#865CD0" >
                                     <p className="follow" >Follow</p>
                                 </Outlinebutton>
@@ -153,12 +159,15 @@ export const Event = () => {
                         </div>
                     </div>
                 </div >
-                <div className="part2" ></div>
+                <div className="part2" >
+                    <Ticket />
+                </div>
             </div >
             <div className="second" >
                 <p className="upcoming" >Upcoming Events</p>
                 <Cardslider />
             </div>
+            <Footer />
         </div>
     )
 }

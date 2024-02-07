@@ -29,12 +29,12 @@ export const Cardslider = () => {
                                     <p className='ltxt' >{data.cash}</p>
                                 </div>
                                 <div className="details1">
-                                    <SlLocationPin size={25} color='#865CD0' />
-                                    <p className='ftxt' >{data.location}</p>
+                                    <SlLocationPin className='rupaiya' color='#865CD0' />
+                                    <p className='cardftxt' >{data.location}</p>
                                 </div>
                                 <div className="details1">
-                                    <RiCalendarEventFill size={25} color='#865CD0' />
-                                    <p className='ftxt' >{data.date}</p>
+                                    <RiCalendarEventFill className='rupaiya' color='#865CD0' />
+                                    <p className='cardftxt' >{data.date}</p>
                                 </div>
 
                             </div>

@@ -1,31 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
 
 .bodymain {
-    padding: 20px 30px;
-    height: 1000vh;
+    padding: 20px 10px;
 }
 
 .body {
     display: flex;
+    gap: 40px;
 }
 
 .part1 {
-    width: 50%;
-    /* height: 800vh; */
+    width: 100%;
     display: flex;
-    gap: 36px;
+    gap: 10px;
     flex-direction: column;
 }
 
 .part2 {
-    width: 50%;
+    width: 0%;
     height: 100vh;
+    display: none;
 }
 
 .htext {
     font-family: 'Poppins', sans-serif;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .purple {
@@ -34,7 +35,7 @@
 
 .imgcon {
     width: 100%;
-    height: 400px;
+    height: 200px;
     background-image: url('/ts.jpg');
     background-position: center;
     background-size: cover;
@@ -46,14 +47,16 @@
     border-radius: 15px;
     margin-top: -50px;
     box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-h1 {
+.h1 {
     font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .btncon {
@@ -63,7 +66,7 @@ h1 {
 
 .btntxt {
     font-family: 'Poppins', sans-serif;
-    font-size: 18px;
+    font-size: 12px;
 }
 
 .title {
@@ -74,6 +77,7 @@ h1 {
 .seprate {
     display: flex;
     justify-content: space-between;
+    margin-top: 5px;
 }
 
 .first {
@@ -86,34 +90,50 @@ h1 {
 .ftxt {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.705);
+}
+
+.ftxxt {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
     color: rgba(0, 0, 0, 0.705);
 }
 
 .ltxt {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 10px;
     color: #865CD0;
     cursor: pointer;
 }
 
+.ltxxt {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: #865CD0;
+    cursor: pointer;
+    padding: 4px 20px;
+}
+
 .acon {
-    padding: 20px;
+    padding: 5px 5px;
     box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.1);
-    gap: 36px;
+    gap: 24px;
     border-radius: 15px;
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
 }
 
 .scontainer {
     display: flex;
-    gap: 20px;
+    gap: 5px;
     justify-content: space-between;
 }
 
@@ -124,8 +144,8 @@ h1 {
 }
 
 .image {
-    width: 20px;
-    height: 20px;
+    width: 14px;
+    height: 14px;
 }
 
 .divider {
@@ -134,7 +154,7 @@ h1 {
 }
 
 .half {
-    width: 40%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -161,14 +181,15 @@ h1 {
 .terms {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
+    font-size: 12px;
     text-align: justify;
     color: #000;
 
 }
 
 .profile {
-    width: 150px;
-    height: 150px;
+    width: 80px;
+    height: 80px;
     object-fit: cover;
     border-radius: 100%;
 }
@@ -179,6 +200,7 @@ h1 {
     justify-content: center;
     align-items: center;
     padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .profilecon {
@@ -186,39 +208,207 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
+.imgdetsep {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.smgap {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 4px;
+}
+
+
 .namey {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    font-size: 20px;
+    font-family: 'Lora', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
 }
 
 .sub {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
+    font-family: 'Lora', sans-serif;
+    font-weight: 500;
+    font-size: 10px;
 }
 
 .follow {
-    padding: 0px 25px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
-    font-size: 18px;
+    padding: 10px 25px;
+    font-family: 'Lora', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
 }
 
 .second {
-    margin-top: 40px;
-    padding: 20px;
+    margin-top: 20px;
+    padding: 10px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    gap: 25px;
 }
 
 .upcoming {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Lora', sans-serif;
     font-weight: 600;
-    font-size: 25px;
+    font-size: 18px;
+}
+
+.sharebtn {
+    width: 20px;
+    height: 20px;
+}
+
+.btnstyle {
+    padding: 10px 15px;
+    border: none;
+    color: white
+}
+
+.local {
+    width: 14px;
+    height: 14px;
+}
+
+
+/* Responsive */
+
+@media only screen and (min-width: 1024px) {
+    .part2 {
+        display: block;
+        width: 50%;
+    }
+
+    .part1 {
+        width: 50%;
+    }
+
+    .bodymain {
+        padding: 20px 30px;
+    }
+
+    .imgcon {
+        height: 400px;
+    }
+
+    .part1 {
+        gap: 36px;
+    }
+
+    .htext {
+        font-size: 18px;
+    }
+
+    .h1 {
+        font-size: 40px;
+    }
+
+    .sharebtn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .details {
+        padding: 20px;
+    }
+
+    .btntxt {
+        font-size: 26px;
+    }
+
+    .btnstyle {
+        padding: 10px 20px;
+    }
+
+    .local {
+        width: 26px;
+        height: 26px;
+    }
+
+    .ftxt {
+        font-size: 26px;
+    }
+
+    .ltxt {
+        font-size: 24px;
+        padding: 5px 25px;
+    }
+
+    .image {
+        width: 26px;
+        height: 26px;
+    }
+
+    .acon {
+        padding: 20px;
+    }
+
+    .container {
+        gap: 24px
+    }
+
+    .ftxxt {
+        font-size: 26px;
+    }
+
+    .scontainer {
+        gap: 20px;
+    }
+
+    .ltxxt {
+        font-size: 26px;
+    }
+
+    .terms {
+        font-size: 26px;
+
+    }
+
+    .profilecon {
+        gap: 28px;
+    }
+
+    .namey {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 26px;
+    }
+
+    .profile {
+        width: 200px;
+        height: 200px;
+    }
+
+    .sub {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        font-size: 22px;
+    }
+
+    .follow {
+        padding: 10px 25px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 26px;
+    }
+
+    .upcoming {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 35px;
+    }
+
+    .second {
+        margin-top: 40px;
+        padding: 20px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
 }

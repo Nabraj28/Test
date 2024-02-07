@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.ticketmain {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.ticketcon {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.ticketselect {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.tdivider {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    color: #0000004e;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+.tdivider::before,
+.tdivider::after {
+    flex: 1;
+    content: '';
+    padding: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 5px;
+}
+
+
+.tickethead {
+    width: 50%;
+    height: 120px;
+    display: flex;
+    background-color: #865CD0;
+}
+
+.tcktaccordion {
+    border: none;
+    margin-bottom: 10px;
+}
+
+.tcktaccordion-header {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.tcktaccordion-content {
+    padding: 10px;
+}
+
+.tcktheading {
+    width: 100%;
+    border-radius: 25px;
+    background-color: #865CD0;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.tcktdetails {
+    box-shadow: 0px 3px 9px #875cd052;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    margin-top: -50px;
+}
+
+.tcktgap {
+    padding-top: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.tcktdatecon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    width: 20%;
+}
+
+.dayofweek {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+.dayofmonth {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 48px;
+    color: white;
+}
+
+.dividermain {
+    width: 2%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.dividerimgcon {
+    width: 100%;
+    height: 90%;
+}
+
+.dividerimg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tckheadinginfo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    width: 60%;
+    /* background-color: aqua; */
+
+}
+
+.logocon {
+    width: 25px;
+    height: 25px;
+}
+
+.lot {
+    display: flex;
+    gap: 10px;
+}
+
+.tcktcolorcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding-bottom: 5px;
+}
+
+.whitecir {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ticketimg {
+    width: 30px;
+    height: 30px;
+}
+
+.between {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.fsphase {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.tcktprice {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #865CD0;
+}
+
+.viewhide {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
+.fsmain {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.tcktaddmain {
+    width: 30%;
+    background-color: #875cd03f;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.tcktaddtext {
+    color: #865CD0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+
+}
+
+hr {
+    border-top: 2px dashed #865CD0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

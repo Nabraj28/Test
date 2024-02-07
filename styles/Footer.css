@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.footermain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.footercard {
+    width: 290px;
+    height: 120px;
+    box-shadow: 0px 2px 6px #865CD080;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.question {
+    width: 65px;
+    height: 65px;
+}
+
+.help {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: #875cd027;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerinfo {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 80%;
+    padding-left: 10px;
+    gap: 10px;
+    padding-top: 15px;
+}
+
+.inquiry {
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.phoneemail {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.phoneicon {
+    width: 15px;
+    height: 15px;
+}
+
+.emailicon {
+    width: 15px;
+    height: 15px;
+}
+
+.petext {
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+}
+
+@media only screen and (min-width: 1024px) {
+    .footermain {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    .footercard {
+        width: 920px;
+        height: 280px;
+    }
+
+    .help {
+        width: 130px;
+        height: 130px;
+    }
+
+    .inquiry {
+        font-size: 50px;
+    }
+
+    .petext {
+        font-size: 25px;
+    }
+
+    .phoneicon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .emailicon {
+        width: 30px;
+        height: 25px;
+    }
+
+    .footerinfo {
+        padding-left: 50px;
+        gap: 30px;
+        padding-top: 25px;
+    }
+
+    .phoneemail {
+        gap: 20px;
+    }
+}

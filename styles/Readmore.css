@@ -3,10 +3,22 @@
 
 .txt {
     font-family: 'Lora', sans-serif;
+    font-size: 10px;
 
 }
 
 .about {
     font-family: 'Poppins', sans-serif;
     text-align: justify;
+    font-size: 12px;
+}
+
+@media only screen and (min-width: 1024px) {
+    .txt {
+        font-size: 26px;
+    }
+
+    .about {
+        font-size: 26px;
+    }
 }

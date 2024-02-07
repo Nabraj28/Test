@@ -1,17 +1,16 @@
 
 import { Buttonprops } from "../types";
+import "../../styles/Eventstyles.css"
+
 
 const Button = ({ children, color }: Buttonprops) => {
+
     const buttonStyle = {
         backgroundColor: color,
-        padding: '10px 20px',
-        border: 'none',
-        color: 'white',
-        // margin: '5px'
     };
 
     return (
-        <button style={buttonStyle}>
+        <button style={buttonStyle} className="btnstyle" >
             {children}
         </button>
     );
