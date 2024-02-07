@@ -4,13 +4,14 @@ import { FaFacebook, FaTwitter, FaYoutube, FaPinterest, FaBehanceSquare } from "
 import { IoSearch } from "react-icons/io5";
 
 
+
 export const Navbar = () => {
 
     const Links = [
-        { name: "Home", link: "/" },
-        { name: "About", link: "/about" },
-        { name: "Event", link: "/event" },
-        { name: "Contact Us", link: "/contactus" }
+        { name: "Home", link: "../pages/Home" },
+        { name: "About", link: "../pages/About" },
+        { name: "Event", link: "../pages/Event" },
+        { name: "Contact Us", link: "../pages/Contactus" }
     ];
 
     return (
