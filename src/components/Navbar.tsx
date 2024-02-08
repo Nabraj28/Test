@@ -4,7 +4,6 @@ import { FaFacebook, FaTwitter, FaYoutube, FaPinterest, FaBehanceSquare } from "
 import { IoSearch } from "react-icons/io5";
 
 
-
 export const Navbar = () => {
 
     const Links = [

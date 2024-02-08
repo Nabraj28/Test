@@ -21,6 +21,7 @@
     padding-right: 65px;
     display: flex;
     flex-direction: row;
+    position: relative;
 }
 
 .txtlogo {
@@ -39,7 +40,10 @@ ul {
 
 .ulcon {
     display: none;
+    align-items: center;
 }
+
+
 
 
 .navlink {
@@ -75,6 +79,7 @@ span {
 .mediacon {
     display: none;
 }
+
 
 
 
@@ -117,4 +122,7 @@ span {
     .navbar {
         height: 80px;
     }
+
+
+
 }
