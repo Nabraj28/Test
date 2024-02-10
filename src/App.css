@@ -1,4 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+:root {
+    --main-color: #865CD0;
+    --small-font: 14px;
+    --xsmall-font: 12px;
+    --big-font: 22px;
+    --font-poppins: 'Poppins', sans-serif;
+    --font-lora: 'Lora', sans-serif;
+}
 
 header {
     margin-bottom: 50px;
@@ -6,14 +13,14 @@ header {
 
 @media only screen and (min-width: 1024px) {
     header {
-        margin-bottom: 100px;
+        margin-bottom: 80px;
     }
 
 }
 
 @media only screen and (min-width: 768px) {
     header {
-        margin-bottom: 100px;
+        margin-bottom: 80px;
     }
 
 }

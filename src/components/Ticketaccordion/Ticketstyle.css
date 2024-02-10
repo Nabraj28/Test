@@ -1,0 +1,237 @@
+.ticketmain {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.ticketcontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.ticketselect {
+    font-family: var(--font-poppins);
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.locationdivider {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    color: #0000004e;
+    font-family: var(--font-poppins);
+    font-weight: 600;
+}
+
+.locationdivider::before,
+.locationdivider::after {
+    flex: 1;
+    content: '';
+    padding: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 5px;
+}
+
+
+.tickethead {
+    width: 50%;
+    height: 120px;
+    display: flex;
+    background-color: var(--main-color);
+}
+
+.tcktaccordion {
+    border: none;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+
+}
+
+.tcktaccordion-header {
+    /* padding: 10px; */
+    cursor: pointer;
+}
+
+
+.tcktaccordion-content {
+    /* width: 0%; */
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in;
+    box-shadow: 0px 3px 9px #875cd052;
+    border-radius: 25px;
+}
+
+.tcktaccordion-content.open {
+    /* width: 100%; */
+    max-height: 500px;
+}
+
+.tcktheading {
+    width: 100%;
+    border-radius: 25px;
+    background-color: var(--main-color);
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+
+.ticketpadding {
+    padding: 10px;
+}
+
+.ticketdatecontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    width: 20%;
+}
+
+.dayofweek {
+    font-family: var(--font-poppins);
+    font-size: 20px;
+    color: white;
+}
+
+.dayofmonth {
+    font-family: var(--font-poppins);
+    font-weight: 500;
+    font-size: 48px;
+    color: white;
+}
+
+.dividermain {
+    width: 2%;
+    height: 150px;
+    display: flex;
+    align-items: center;
+}
+
+.dividerimgcon {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dividerimg {
+    width: 10px;
+    height: 10px;
+    object-fit: cover;
+}
+
+.ticketheadinginfo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    width: 60%;
+    /* background-color: aqua; */
+
+}
+
+.logocon {
+    width: 25px;
+    height: 25px;
+}
+
+.logotextseprator {
+    display: flex;
+    gap: 10px;
+}
+
+.tcktcolorcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding-bottom: 5px;
+    padding-right: 5px;
+}
+
+.whitecircle {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ticketimg {
+    width: 30px;
+    height: 30px;
+}
+
+.between {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.firstsecondphase {
+    font-family: var(--font-poppins);
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.ticketprice {
+    font-family: var(--font-poppins);
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--main-color);
+}
+
+.viewhide {
+    font-family: var(--font-poppins);
+    font-size: 15px;
+}
+
+.phasecost {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.addticketcontainer {
+    width: 25%;
+    background-color: #875cd03f;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 5px 10px;
+}
+
+.ticketaddtext {
+    color: var(--main-color);
+    font-family: var(--font-poppins);
+    font-size: 20px;
+
+}
+
+hr {
+    border-top: 2px dashed var(--main-color);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

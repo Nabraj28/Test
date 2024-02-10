@@ -1,0 +1,423 @@
+.bodymain {
+    padding: 0;
+}
+
+.upperbody {
+    display: flex;
+    gap: 40px;
+    padding: 20px 10px;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.part1 {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.part2 {
+    width: 0%;
+    height: 100vh;
+    display: none;
+}
+
+.pathtext {
+    font-family: var(--font-poppins);
+    font-size: 15px;
+}
+
+.purple {
+    color: var(--main-color);
+}
+
+.heroimagecontainer {
+    width: 100%;
+    /* aspect-ratio: 1/1; */
+    background-image: url('/ts.jpg');
+
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.details {
+    background-color: white;
+    border-radius: 15px;
+    margin-top: -50px;
+    box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.h1 {
+    font-family: var(--font-poppins);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.tagsbuttoncontainer {
+    display: flex;
+    gap: 10px;
+}
+
+.buttontext {
+    font-family: var(--font-poppins);
+    font-size: var(--small-font);
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.seprate {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.first {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.locationdatetext {
+    font-family: var(--font-poppins);
+    font-weight: 400;
+    font-size: var(--small-font);
+    color: rgba(0, 0, 0, 0.705);
+}
+
+.intrestedtext {
+    font-family: var(--font-poppins);
+    font-weight: 400;
+    font-size: var(--small-font);
+    color: rgba(0, 0, 0, 0.705);
+}
+
+.calendarmaptext {
+    font-family: var(--font-poppins);
+    font-weight: 400;
+    font-size: var(--small-font);
+    color: var(--main-color);
+    cursor: pointer;
+}
+
+.intrestedbuttontext {
+    font-family: var(--font-poppins);
+    font-weight: 400;
+    font-size: var(--small-font);
+    color: var(--main-color);
+    cursor: pointer;
+    padding: 4px 20px;
+}
+
+.accordiancontainer {
+    padding: 5px 5px;
+    box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.1);
+    gap: 24px;
+    border-radius: 15px;
+}
+
+.infocontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.seprator {
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+}
+
+.space {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.image {
+    width: 18px;
+    height: 18px;
+}
+
+.divider {
+    height: 1px;
+    background-color: #54545899;
+}
+
+.likecontainer {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.likes {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.num {
+    font-family: var(--font-poppins);
+    font-weight: 500;
+    font-size: 20px;
+}
+
+
+
+.terms {
+    font-family: var(--font-poppins);
+    font-weight: 400;
+    font-size: var(--small-font);
+    text-align: justify;
+    color: #000;
+
+}
+
+.profile {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.profilemain {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.profilecontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.imgdetailseprator {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.smgap {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 4px;
+}
+
+
+.profilename {
+    font-family: var(--font-lora);
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.followers {
+    font-family: var(--font-lora);
+    font-weight: 500;
+    font-size: 10px;
+}
+
+.follow {
+    padding: 5px 10px;
+    font-family: var(--font-lora);
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.lowerbody {
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.upcoming {
+    font-family: var(--font-lora);
+    font-weight: 600;
+    font-size: 18px;
+    padding-left: 10px;
+}
+
+.sharebtn {
+    width: 20px;
+    height: 20px;
+}
+
+
+.locationcalendaricon {
+    width: 16px;
+    height: 16px;
+}
+
+
+/* Responsive */
+
+@media only screen and (max-width: 424px) {
+    .heroimagecontainer {
+        aspect-ratio: 1/1;
+        background-position: center;
+    }
+}
+
+@media only screen and (min-width: 425px) and (max-width:768px) {
+    .heroimagecontainer {
+        aspect-ratio: 16/9;
+        background-position: center;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width:1024px) {
+    .heroimagecontainer {
+        aspect-ratio: 16/9;
+        background-position: start;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .part2 {
+        display: block;
+        width: 40%;
+    }
+
+    .heroimagecontainer {
+        aspect-ratio: 16/9;
+        background-position: start;
+    }
+
+    .part1 {
+        width: 60%;
+    }
+
+    .bodymain {
+        padding: 20px 30px;
+    }
+
+    .part1 {
+        gap: 36px;
+    }
+
+    .pathtext {
+        font-size: 18px;
+    }
+
+    .h1 {
+        font-size: 35px;
+    }
+
+    .sharebtn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .details {
+        padding: 20px;
+    }
+
+    .buttontext {
+        font-size: var(--big-font)
+    }
+
+    .locationcalendaricon {
+        width: 26px;
+        height: 26px;
+    }
+
+    .locationdatetext {
+        font-size: var(--big-font);
+    }
+
+    .calendarmaptext {
+        font-size: var(--big-font);
+        padding: 5px 25px;
+    }
+
+    .image {
+        width: 26px;
+        height: 26px;
+    }
+
+    .accordiancontainer {
+        padding: 20px;
+    }
+
+    .container {
+        gap: 24px
+    }
+
+    .intrestedtext {
+        font-size: var(--big-font)
+    }
+
+    .scontainer {
+        gap: 20px;
+    }
+
+    .intrestedbuttontext {
+        font-size: var(--big-font)
+    }
+
+    .terms {
+        font-size: var(--big-font)
+    }
+
+    .profilecontainer {
+        gap: 28px;
+    }
+
+    .profilename {
+        font-family: var(--font-poppins);
+        font-weight: 500;
+        font-size: var(--big-font)
+    }
+
+    .profile {
+        width: 200px;
+        height: 200px;
+    }
+
+    .followers {
+        font-family: var(--font-poppins);
+        font-weight: 400;
+        font-size: 22px;
+    }
+
+    .follow {
+        padding: 10px 25px;
+        font-family: var(--font-poppins);
+        font-weight: 600;
+        font-size: var(--big-font)
+    }
+
+    .upcoming {
+        font-family: var(--font-poppins);
+        font-weight: 600;
+        font-size: 35px;
+    }
+
+    .lowerbody {
+        margin-top: 40px;
+        padding: 20px;
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+}

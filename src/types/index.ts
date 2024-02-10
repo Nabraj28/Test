@@ -1,13 +1,7 @@
-import React, { ReactNode } from "react";
-
-export interface Buttonprops {
-    children: ReactNode,
-    color: string,
-
-}
-
-export interface AccordionProps {
-    title?: React.ReactNode;
-    children: ReactNode;
-    showIcon: boolean
-}
+export * from './Navbartypes'
+export * from './Accordiontypes'
+export * from './Buttontypes'
+export * from './Cardtypes'
+export * from './Artiststypes'
+export * from './Gallerytypes'
+export * from './Tickettypes'

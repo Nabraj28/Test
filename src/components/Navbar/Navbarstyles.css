@@ -1,0 +1,136 @@
+.navbar {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 1000;
+
+}
+
+.logo {
+    padding-left: 25px;
+}
+
+.components {
+    padding-right: 65px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.txtlogo {
+    font-family: "League Spartan", sans-serif;
+    font-size: 30px;
+    color: black;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    list-style-type: none;
+    padding: 0px 20px;
+}
+
+.ulcontainer {
+    display: none;
+    align-items: center;
+}
+
+
+
+
+.navlink {
+    text-decoration: none;
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+}
+
+.activenavlink {
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+    border-bottom: 3px solid #D4A373;
+}
+
+.mediacontainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 0 20px;
+
+}
+
+.border {
+    width: 1.5px;
+    height: 20px;
+    background-color: #e5e5e5;
+    display: none;
+}
+
+span {
+    cursor: pointer;
+}
+
+.search {
+    padding: 0px 20px;
+    display: none;
+}
+
+.mediamaincontainer {
+    display: none;
+}
+
+
+
+
+
+/* Responsive */
+
+
+@media only screen and (min-width: 1024px) {
+    .mediamaincontainer {
+        display: block;
+    }
+
+    .ulcon {
+        display: block;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    .ulcontainer {
+        display: block;
+    }
+
+    .border {
+        display: block;
+    }
+
+    .search {
+        display: block;
+    }
+
+    .logo {
+        padding-left: 65px;
+    }
+
+    .txtlogo {
+        font-size: 25px;
+    }
+
+    .navbar {
+        height: 80px;
+    }
+
+
+
+}

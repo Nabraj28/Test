@@ -1,0 +1,41 @@
+.gallerycontainer {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.imggallery {
+    width: 250px;
+    aspect-ratio: 5/4;
+    border-radius: 15px;
+
+}
+
+.if {
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+@media screen and (max-width:768px) {
+    .if {
+        aspect-ratio: 5/3;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .if {
+        aspect-ratio: 6/3;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .imggallery {
+        width: 500px;
+        aspect-ratio: 5/4;
+    }
+
+    .gallerycon {
+        padding: 10px;
+    }
+}

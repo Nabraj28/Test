@@ -3,7 +3,7 @@ import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Home } from './pages/Home'
 import { About } from './pages/About'
-import { Event } from './pages/Event'
+import Event from './pages/Event'
 import { Contactus } from './pages/Contactus'
 import { Navbar } from './components/Navbar'
 
