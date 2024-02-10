@@ -63,13 +63,19 @@
 }
 
 .petext {
-    font-size: var(--small-font);
+    font-size: var(--xsmall-font);
     font-family: var(--font-poppins);
 }
 
 @media only screen and (max-width: 768px) {
     .footercard {
         width: 80%;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .footercard {
+        width: 60%;
     }
 }
 
@@ -94,7 +100,7 @@
     }
 
     .petext {
-        font-size: 25px;
+        font-size: var(--big-font);
     }
 
     .phoneicon {
