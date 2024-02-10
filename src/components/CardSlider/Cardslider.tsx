@@ -2,7 +2,7 @@ import './Card.css'
 import { RiCalendarEventFill } from "react-icons/ri";
 import { SlLocationPin } from "react-icons/sl";
 import { Cardtypes } from '../../types';
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import "../Artists/Artiststyle.css"
 

@@ -1,7 +1,7 @@
 import './Gallerystyles.css'
 import '../Artists/Artiststyle.css'
 import { Gallerytypes } from '../../types'
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 

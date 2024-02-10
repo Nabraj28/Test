@@ -1,6 +1,6 @@
 import './Artiststyle.css'
 import { Artiststypes } from '../../types';
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 
