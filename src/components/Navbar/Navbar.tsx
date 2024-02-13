@@ -1,8 +1,9 @@
-import './Navbarstyles.css'
-import { Link, NavLink } from 'react-router-dom';
+
 import { FaFacebook, FaTwitter, FaYoutube, FaPinterest, FaBehanceSquare } from "react-icons/fa";
-import { IoSearch } from "react-icons/io5";
+import { Link } from 'react-router-dom';
 import { Navlinktypes } from '../../types';
+import { Components, Linkscontainer, Logo, Nav, StyledMediaContainer, StyledNavLink, StyledSearchContainer } from './Navbar.styled';
+import { IoSearch } from 'react-icons/io5';
 
 const Navbar = () => {
 
@@ -14,31 +15,25 @@ const Navbar = () => {
     ];
 
     return (
-        <div className='navbar' >
-            <div className='logo' ><Link to="/" style={{ textDecoration: 'none' }} ><p className='txtlogo' >REVEL</p></Link></div>
-            <div className='components' >
-                <div className='ulcontainer' >
-                    <ul>
-                        {
-                            Links.map((link) => (
+        <>
+            <Nav>
+                <Logo>
+                    <p>REVEL</p>
+                </Logo>
+                <Components>
+                    <Linkscontainer>
+                        {Links.map((link) => (
+                            <ul>
                                 <li key={link.name} >
-                                    <NavLink
-
-                                        className={({ isActive }) =>
-                                            isActive ? "activenavlink" : "navlink"
-                                        }
-                                        to={link.link}
-                                    >
+                                    <StyledNavLink to={link.link} >
                                         {link.name}
-                                    </NavLink>
+                                    </StyledNavLink>
                                 </li>
-                            ))
-                        }
-                    </ul>
-                </div>
-                <div className='border' ></div>
-                <div className='mediamaincontainer' >
-                    <div className='mediacontainer' >
+                            </ul>
+                        ))}
+                    </Linkscontainer>
+                    <span></span>
+                    <StyledMediaContainer>
                         <Link to="/" >
                             <FaFacebook size={20} color='black' />
                         </Link>
@@ -54,14 +49,14 @@ const Navbar = () => {
                         <Link to="/" >
                             <FaBehanceSquare size={20} color='black' />
                         </Link>
-                    </div>
-                </div>
-                <div className='border' ></div>
-                <div className='search' >
-                    <IoSearch size={20} color='black' />
-                </div>
-            </div>
-        </div>
+                    </StyledMediaContainer>
+                    <span></span>
+                    <StyledSearchContainer>
+                        <IoSearch size={20} color='black' />
+                    </StyledSearchContainer>
+                </Components>
+            </Nav>
+        </>
     )
 }
 

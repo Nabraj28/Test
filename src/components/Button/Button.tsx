@@ -1,18 +1,15 @@
 
 import { Buttonprops } from "../../types";
-import "./Button.css"
+import { TagsButton } from "./Button.styled";
 
 
-const Button = ({ children, color }: Buttonprops) => {
+const Button = ({ children, color, backgroundColor }: Buttonprops) => {
 
-    const buttonStyle = {
-        backgroundColor: color,
-    };
 
     return (
-        <button style={buttonStyle} className="btnstyle" >
+        <TagsButton Color={color} backgroundColor={backgroundColor}  >
             {children}
-        </button>
+        </TagsButton>
     );
 };
 

@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
-import "../Accordion/Accordion.css"
+// import "../Accordion/Accordion.css"
 import { AccordionProps } from '../../types';
 
 
@@ -31,3 +31,34 @@ const Textaccordion = ({ children, showIcon = true }: AccordionProps) => {
 };
 
 export default Textaccordion;
+
+// .accordion {
+//     border: none;
+//     margin-bottom: 10px;
+// }
+
+// .txtaccordion-header {
+//     padding: 10px;
+//     background-color: white;
+//     cursor: pointer;
+//     display: flex;
+//     align-items: center;
+//     gap: 20px
+// }
+
+
+// .txtaccordion-title {
+//     font-family: var(--font-poppins);
+//     font-size: 15px;
+
+// }
+
+// .txtaccordion-content {
+//     font-family: var(--font-poppins);
+//     font-size: 16px;
+
+// }
+
+// .accordion-content {
+//     padding: 10px;
+// }

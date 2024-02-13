@@ -6,8 +6,6 @@
     display: flex;
     gap: 40px;
     padding: 20px 10px;
-    overflow: scroll;
-    scrollbar-width: none;
 }
 
 .part1 {
@@ -36,7 +34,7 @@
     width: 100%;
     /* aspect-ratio: 1/1; */
     background-image: url('/ts.jpg');
-
+    /* background position */
     background-size: cover;
     border-radius: 10px;
 }

@@ -1,12 +1,11 @@
 
 import { useState } from 'react';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
-import './Accordion.css'
 import { AccordionProps } from '../../types';
+import { AccordionContainer, AccordionContent, AccordionHeader, AccordionTitle, DownIcon, UpIcon } from './Accordion.styled';
 
 
 
-const Accordion = ({ title, children, showIcon = true }: AccordionProps) => {
+const Accordion = ({ title, children }: AccordionProps) => {
     const [isOpen, setIsOpen] = useState(true);
 
     const toggleAccordion = () => {
@@ -14,17 +13,19 @@ const Accordion = ({ title, children, showIcon = true }: AccordionProps) => {
     };
 
     return (
-        <div className="accordion">
-            <div className="accordion-header" onClick={toggleAccordion}>
-                <span className="accordion-title">{title}</span>
-                {showIcon && (isOpen ? <FaChevronUp className='updown' /> : <FaChevronDown className='updown' />)}
-            </div>
-            {isOpen && (
-                <div className="accordion-content">
-                    {children}
-                </div>
-            )}
-        </div>
+        <AccordionContainer>
+            <AccordionHeader onClick={toggleAccordion} >
+                <AccordionTitle>{title}</AccordionTitle>
+                {isOpen ? <UpIcon /> : <DownIcon />}
+            </AccordionHeader>
+            {
+                isOpen && (
+                    <AccordionContent>
+                        {children}
+                    </AccordionContent>
+                )
+            }
+        </AccordionContainer>
     );
 };
 
