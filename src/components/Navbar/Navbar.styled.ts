@@ -57,9 +57,7 @@ export const Linkscontainer = styled.section`
     align-items: center;
     gap: 30px;
 
-    ul{
-    display: flex;
-    flex-direction: row;
+    li{
     list-style-type: none;
     
     }

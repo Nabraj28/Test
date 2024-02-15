@@ -1,22 +1,20 @@
 
-import { Buttonprops } from "../../types";
+import { OutlineButtonProps } from "../../types";
+import { StyledOutlineButton } from "./Outline.styled";
 
-const Outlinebutton = ({ children, color }: Buttonprops) => {
-    const buttonStyle = {
-        backgroundColor: 'white',
-        padding: '0px 0px',
-        color: color,
-        borderWidth: '1px solid',
-        borderColor: color,
-        borderRadius: '10px',
-        cursor: 'Pointer'
 
-    };
+
+
+const Outlinebutton = ({ children, color, bordercolor }: OutlineButtonProps) => {
+
+
 
     return (
-        <button style={buttonStyle}>
+
+        <StyledOutlineButton color={color} bordercolor={bordercolor} >
             {children}
-        </button>
+        </StyledOutlineButton>
+
     );
 };
 

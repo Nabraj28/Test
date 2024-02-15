@@ -1,12 +1,35 @@
-import './Artiststyle.css'
 import { Artiststypes } from '../../types';
-import { useRef } from 'react';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { useRef, useState, useEffect } from 'react';
+import { Artist, ArtistContainer, ArtistImage, ArtistMainContainer, ArtistName, ArtistProfession, LeftButton, RightButton } from './Artist.styled';
 
 
 export const Artists = () => {
 
     const containerRef = useRef<HTMLDivElement>(null);
+    const [scrollLeft, setScrollLeft] = useState<number>(0);
+    const [scrollWidth, setScrollWidth] = useState<number>(0);
+    const [clientWidth, setClientWidth] = useState<number>(0);
+
+    useEffect(() => {
+        const container = containerRef.current;
+        if (container) {
+            setScrollLeft(container.scrollLeft);
+            setScrollWidth(container.scrollWidth);
+            setClientWidth(container.clientWidth);
+
+            const handleScroll = () => {
+                setScrollLeft(container.scrollLeft);
+                setScrollWidth(container.scrollWidth);
+                setClientWidth(container.clientWidth);
+            };
+
+            container.addEventListener('scroll', handleScroll);
+
+            return () => {
+                container.removeEventListener('scroll', handleScroll);
+            };
+        }
+    }, []);
 
     const handleScroll = (scrollOffset: number) => {
         const adjustedOffset = window.innerWidth >= 1024 ? 200 : 100;
@@ -29,18 +52,20 @@ export const Artists = () => {
 
     ];
     return (
-        <div className="maincontainer">
-            <FaArrowLeft className="scroll-arrow left" onClick={() => handleScroll(-100)} />
-            <div className="artistcontainer" ref={containerRef}>
-                {data.map((item) => (
-                    <div className="subcontainer" key={item.id}>
-                        <img src={item.src} alt="image" className="imgcontainer" />
-                        <p className="name">{item.name}</p>
-                        <p className="prof">{item.profession}</p>
-                    </div>
-                ))}
-            </div>
-            <FaArrowRight className="scroll-arrow right" onClick={() => handleScroll(100)} />
-        </div>
+        <ArtistMainContainer>
+            {scrollLeft > 0 && <LeftButton onClick={() => handleScroll(-100)} />}
+            <ArtistContainer ref={containerRef} >
+                {
+                    data.map((item) => (
+                        <Artist key={item.id} >
+                            <ArtistImage src={item.src} />
+                            <ArtistName>{item.name}</ArtistName>
+                            <ArtistProfession>{item.profession}</ArtistProfession>
+                        </Artist>
+                    ))
+                }
+            </ArtistContainer>
+            {scrollLeft < scrollWidth - clientWidth && <RightButton onClick={() => handleScroll(100)} />}
+        </ArtistMainContainer>
     )
 }

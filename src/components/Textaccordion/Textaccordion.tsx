@@ -1,12 +1,43 @@
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
-// import "../Accordion/Accordion.css"
-import { AccordionProps } from '../../types';
+import styled from 'styled-components';
+
+
+interface TextAccordionProps {
+    children: React.ReactNode
+}
+
+const AccordionContainer = styled.div`
+    border: none;
+    margin-bottom: 10px;
+`;
+
+const AccordionHeader = styled.div`
+    padding: 10px;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+`;
+
+const AccordionTitle = styled.span`
+    font-family: ${({ theme }) => theme.poppins};
+    font-size: 16px;
+`;
+const ContentText = styled.span`
+    font-family: ${({ theme }) => theme.poppins};
+    font-size: 16px;
+`;
+
+const AccordionContent = styled.div`
+    padding: 10px;
+`;
 
 
 
-const Textaccordion = ({ children, showIcon = true }: AccordionProps) => {
+const TextAccordion = ({ children, }: TextAccordionProps) => {
     const [isOpen, setIsOpen] = useState(true);
 
     const toggleAccordion = () => {
@@ -14,51 +45,18 @@ const Textaccordion = ({ children, showIcon = true }: AccordionProps) => {
     };
 
     return (
-        <div className="accordion">
-            <div className="txtaccordion-header" onClick={toggleAccordion}>
-                <span className="txtaccordion-title">{isOpen ? "Hide Details" : "View Details"}</span>
-                {showIcon && (isOpen ? <FaChevronUp size={15} /> : <FaChevronDown size={15} />)}
-            </div>
+        <AccordionContainer>
+            <AccordionHeader onClick={toggleAccordion}>
+                <AccordionTitle>{isOpen ? "Hide Details" : "View Details"}</AccordionTitle>
+                {isOpen ? <FaChevronUp size={15} /> : <FaChevronDown size={15} />}
+            </AccordionHeader>
             {isOpen && (
-                <div className="accordion-content">
-                    <span className='txtaccordion-content' >
-                        {children}
-                    </span>
-                </div>
+                <AccordionContent>
+                    <ContentText>{children}</ContentText>
+                </AccordionContent>
             )}
-        </div>
+        </AccordionContainer>
     );
 };
 
-export default Textaccordion;
-
-// .accordion {
-//     border: none;
-//     margin-bottom: 10px;
-// }
-
-// .txtaccordion-header {
-//     padding: 10px;
-//     background-color: white;
-//     cursor: pointer;
-//     display: flex;
-//     align-items: center;
-//     gap: 20px
-// }
-
-
-// .txtaccordion-title {
-//     font-family: var(--font-poppins);
-//     font-size: 15px;
-
-// }
-
-// .txtaccordion-content {
-//     font-family: var(--font-poppins);
-//     font-size: 16px;
-
-// }
-
-// .accordion-content {
-//     padding: 10px;
-// }
+export default TextAccordion;

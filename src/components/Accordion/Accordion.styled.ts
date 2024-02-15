@@ -12,6 +12,9 @@ export const AccordionHeader = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: ${({ theme }) => theme.mobile}){
+       padding: 5px 10px;
+    }
 `
 export const AccordionTitle = styled.h2`
     width: 90%;
@@ -41,4 +44,7 @@ height: 20px;
 
 export const AccordionContent = styled.div`
 padding: 10px 20px ;
+@media (max-width: ${({ theme }) => theme.mobile}){
+       padding: 5px 10px;
+    }
 `

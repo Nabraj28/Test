@@ -1,13 +1,35 @@
-import './Gallerystyles.css'
-import '../Artists/Artiststyle.css'
 import { Gallerytypes } from '../../types'
-import { useRef } from 'react';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { useRef, useState, useEffect } from 'react';
+import { GalleryContainer, GalleryImage, GalleryLeftButton, GalleryMainContainer, GalleryRightButton } from './Gallery.styled';
 
 
 const Gallery = () => {
 
     const containerRef = useRef<HTMLDivElement>(null);
+    const [scrollLeft, setScrollLeft] = useState<number>(0);
+    const [scrollWidth, setScrollWidth] = useState<number>(0);
+    const [clientWidth, setClientWidth] = useState<number>(0);
+
+    useEffect(() => {
+        const container = containerRef.current;
+        if (container) {
+            setScrollLeft(container.scrollLeft);
+            setScrollWidth(container.scrollWidth);
+            setClientWidth(container.clientWidth);
+
+            const handleScroll = () => {
+                setScrollLeft(container.scrollLeft);
+                setScrollWidth(container.scrollWidth);
+                setClientWidth(container.clientWidth);
+            };
+
+            container.addEventListener('scroll', handleScroll);
+
+            return () => {
+                container.removeEventListener('scroll', handleScroll);
+            };
+        }
+    }, []);
 
     const handleScroll = (scrollOffset: number) => {
         const adjustedOffset = window.innerWidth >= 1024 ? 500 : 250;
@@ -27,21 +49,17 @@ const Gallery = () => {
         { id: 6, src: "/ts.jpg" },
     ]
     return (
-        <>
-
-            <div className='gallerycontainer'  >
-                <FaArrowLeft className="scroll-arrow left" onClick={() => handleScroll(-250)} />
-                <div className="artistcontainer" ref={containerRef}>
-                    {data.map((data) => (
-                        <div className='subcontainer' >
-                            <img key={data.id} src={data.src} alt="" className='imggallery' />
-                        </div>
+        <GalleryMainContainer>
+            {scrollLeft > 0 && <GalleryLeftButton onClick={() => handleScroll(-250)} />}
+            <GalleryContainer ref={containerRef} >
+                {
+                    data.map((item) => (
+                        <GalleryImage key={item.id} src={item.src} />
                     ))
-                    }
-                </div>
-                <FaArrowRight className="scroll-arrow right" onClick={() => handleScroll(250)} />
-            </div>
-        </>
+                }
+            </GalleryContainer>
+            {scrollLeft < scrollWidth - clientWidth && <GalleryRightButton onClick={() => handleScroll(250)} />}
+        </GalleryMainContainer>
     )
 }
 

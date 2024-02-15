@@ -23,13 +23,11 @@ const Navbar = () => {
                 <Components>
                     <Linkscontainer>
                         {Links.map((link) => (
-                            <ul>
-                                <li key={link.name} >
-                                    <StyledNavLink to={link.link} >
-                                        {link.name}
-                                    </StyledNavLink>
-                                </li>
-                            </ul>
+                            <li key={link.name} >
+                                <StyledNavLink to={link.link} >
+                                    {link.name}
+                                </StyledNavLink>
+                            </li>
                         ))}
                     </Linkscontainer>
                     <span></span>

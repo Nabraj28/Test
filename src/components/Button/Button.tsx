@@ -3,11 +3,11 @@ import { Buttonprops } from "../../types";
 import { TagsButton } from "./Button.styled";
 
 
-const Button = ({ children, color, backgroundColor }: Buttonprops) => {
+const Button = ({ children, color, backgroundcolor }: Buttonprops) => {
 
 
     return (
-        <TagsButton Color={color} backgroundColor={backgroundColor}  >
+        <TagsButton color={color} backgroundcolor={backgroundcolor}  >
             {children}
         </TagsButton>
     );

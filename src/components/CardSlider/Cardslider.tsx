@@ -1,20 +1,42 @@
-import './Card.css'
-import { RiCalendarEventFill } from "react-icons/ri";
-import { SlLocationPin } from "react-icons/sl";
+
 import { Cardtypes } from '../../types';
-import { useRef } from 'react';
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import "../Artists/Artiststyle.css"
+import { useRef, useState, useEffect } from 'react';
+
+import { AddButton, AddButtonText, CardButtonContainer, CardCalendarIcon, CardDetails, CardFlexContainer, CardImage, CardInfo, CardLeftButton, CardLocationIcon, CardMainContainer, CardRightButton, CardSubContainer, CardText, CardTitle, DetailsContainer, EventDetails, RupeesImage, RupeesText } from './Card.styled';
 
 
 const Cardslider = () => {
 
 
     const containerRef = useRef<HTMLDivElement>(null);
+    const [scrollLeft, setScrollLeft] = useState<number>(0);
+    const [scrollWidth, setScrollWidth] = useState<number>(0);
+    const [clientWidth, setClientWidth] = useState<number>(0);
+
+    useEffect(() => {
+        const container = containerRef.current;
+        if (container) {
+            setScrollLeft(container.scrollLeft);
+            setScrollWidth(container.scrollWidth);
+            setClientWidth(container.clientWidth);
+
+            const handleScroll = () => {
+                setScrollLeft(container.scrollLeft);
+                setScrollWidth(container.scrollWidth);
+                setClientWidth(container.clientWidth);
+            };
+
+            container.addEventListener('scroll', handleScroll);
+
+            return () => {
+                container.removeEventListener('scroll', handleScroll);
+            };
+        }
+    }, []);
 
     const handleScroll = (scrollOffset: number) => {
-        const adjustedOffset = window.innerWidth >= 1024 ? 540 : 270;
-        const finalOffset = scrollOffset * adjustedOffset / 270;
+        const adjustedOffset = window.innerWidth >= 1024 ? 400 : 200;
+        const finalOffset = scrollOffset * adjustedOffset / 200;
 
         if (containerRef.current) {
             containerRef.current.scrollLeft += finalOffset;
@@ -30,45 +52,45 @@ const Cardslider = () => {
         { id: 6, src: "/hhi.jpg", title: "Harry Styles in Nepal enjoy it fullest.", date: "Oct 4, 2023 - Oct 10, 2023", location: "Lakeside-06, Pokhara ", cash: "Rs.10,000 - Rs.50,000" },
     ]
     return (
-        <div className='cardmain'>
-            <FaArrowLeft className="scroll-arrow left" onClick={() => handleScroll(-270)} />
-            <div className='cardflexcontainer' ref={containerRef} >
-                {data.map((data) => (
-                    <div className="cardcontainer" key={data.id} >
-                        <img src={data.src} alt="image" className='cardimage' />
-                        <div className="cardinfo">
-                            <p className='cardtitle' >{data.title}</p>
-                            <div className='carddetailscontainer' >
-                                <div className='carddetails' >
-                                    <div className="eventdetails">
-                                        <img src="/Rupees.svg" alt="frame" className='eventicon' />
-                                        <p className='cashtext' style={{ color: "var(--main-color)" }}  >{data.cash}</p>
-                                    </div>
-                                    <div className="eventdetails">
-                                        <SlLocationPin className='eventicon' color='#865CD0' />
-                                        <p className='cardftxt' >{data.location}</p>
-                                    </div>
-                                    <div className="eventdetails">
-                                        <RiCalendarEventFill className='eventicon' color='#865CD0' />
-                                        <p className='cardftxt' >{data.date}</p>
-                                    </div>
+        <CardMainContainer>
+            {scrollLeft > 0 && <CardLeftButton onClick={() => handleScroll(-200)} />}
+            <CardFlexContainer ref={containerRef} >
+                {
+                    data.map((data) => (
+                        <CardSubContainer key={data.id} >
+                            <CardImage src={data.src} />
+                            <CardInfo>
+                                <CardTitle>{data.title}</CardTitle>
+                                <DetailsContainer>
+                                    <CardDetails>
+                                        <EventDetails>
+                                            <CardCalendarIcon />
+                                            <CardText>{data.date}</CardText>
+                                        </EventDetails>
+                                        <EventDetails>
+                                            <CardLocationIcon />
+                                            <CardText>{data.location}</CardText>
+                                        </EventDetails>
+                                        <EventDetails>
+                                            <RupeesImage src='/Rupees.svg' />
+                                            <RupeesText>{data.cash}</RupeesText>
+                                        </EventDetails>
+                                    </CardDetails>
+                                    <CardButtonContainer>
+                                        <AddButton>
+                                            <AddButtonText>Add</AddButtonText>
+                                        </AddButton>
+                                    </CardButtonContainer>
+                                </DetailsContainer>
+                            </CardInfo>
+                        </CardSubContainer>
+                    ))
 
-                                </div>
-                                <div className='addbtn' >
-                                    <div className='cardbtn' >
-                                        <p className='add' >Add</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                ))}
-            </div>
-            <FaArrowRight className="scroll-arrow right" onClick={() => handleScroll(270)} />
-
-        </div>
+                }
+            </CardFlexContainer>
+            {scrollLeft < scrollWidth - clientWidth - 1 && <CardRightButton onClick={() => handleScroll(200)} />}
+        </CardMainContainer>
     )
 }
 
 export default Cardslider
-

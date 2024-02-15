@@ -1,13 +1,12 @@
-
-import "../Ticketaccordion/Ticketstyle.css"
+import { SelectTicketText, TicketMainContainer } from "./Ticket.styled"
 import TicketContainer from "./TicketContainer"
 
 const Ticket = () => {
     return (
-        <div className='ticketmain' >
-            <p className='ticketselect' >Select Ticket</p>
+        <TicketMainContainer>
+            <SelectTicketText>Select Ticket</SelectTicketText>
             <TicketContainer />
-        </div>
+        </TicketMainContainer>
     )
 }
 

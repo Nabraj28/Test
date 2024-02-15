@@ -1,5 +1,5 @@
 import { useState } from "react";
-import './Readmore.css'
+import { About, AboutContainer, More, ReadMoreText } from "./Readmore.styled";
 
 interface ReadMoreProps {
     children: string;
@@ -14,17 +14,17 @@ const ReadMore = ({ children }: ReadMoreProps) => {
     };
 
     return (
-        <div>
-            <p className="about" >{isReadMore ? text.slice(0, 500) : text}<span onClick={toggleReadMore} style={{ color: "var(--main-color)", fontFamily: "cursive" }} >{isReadMore ? "....." : ""}</span> </p>
-            <p
-                onClick={toggleReadMore}
-                style={{ color: "#865CD0", cursor: "pointer", marginTop: '5px' }}
-                className="txt"
-
-            >
+        <AboutContainer>
+            <About>
+                {isReadMore ? text.slice(0, 400) : text}
+                <More onClick={toggleReadMore}>
+                    {isReadMore ? "....." : ""}
+                </More>
+            </About>
+            <ReadMoreText onClick={toggleReadMore}>
                 {isReadMore ? "Read More" : " Show Less"}
-            </p>
-        </div>
+            </ReadMoreText>
+        </AboutContainer>
     );
 };
 

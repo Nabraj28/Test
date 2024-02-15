@@ -12,6 +12,7 @@ import { ThemeProvider } from 'styled-components'
 function App() {
   const theme = {
     poppins: 'Poppins, sans-serif',
+    lora: 'Lora, sans-serif',
     mobile: '768px',
     largemobile: '425px',
     pc: '1024px',

@@ -9,7 +9,6 @@ import Outlinebutton from "./OutlineButton";
 import ReadMore from "./ReadMore";
 import Textaccordion from "./Textaccordion";
 import Ticket from "./Ticket";
-import Tcaccordoin from "./Ticketaccordion";
 import Video from "./Video";
 
 
@@ -24,7 +23,6 @@ export {
     Gallery,
     Outlinebutton,
     ReadMore,
-    Tcaccordoin,
     Textaccordion,
     Ticket,
     Video
