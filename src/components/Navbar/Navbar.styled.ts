@@ -23,6 +23,7 @@ export const Logo = styled.section`
   padding-left: 70px;
   p{
     font-family: "League Spartan",sans-serif;
+    font-weight: 600;
     font-size: 30px;
     color: black;
   }
@@ -69,6 +70,7 @@ export const StyledNavLink = styled(NavLink)`
     text-decoration: none;
     color: #000;
     font-family: 'Roboto', sans-serif;
+    font-weight: 700;
 
   &.active {
     border-bottom: 3px solid #D4A373;

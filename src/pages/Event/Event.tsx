@@ -125,7 +125,7 @@ export const Event = () => {
                                         People who have shown intrest recently
                                     </StyledText>
                                 </StyledColumn>
-                                <Outlinebutton color="#865CD0" borderColor="#865CD0" >
+                                <Outlinebutton color="#865CD0" bordercolor="#865CD0" >
                                     <StyledButtonText>Intrested?</StyledButtonText>
                                 </Outlinebutton>
                             </StyledIntrestContainer>
@@ -180,7 +180,7 @@ export const Event = () => {
                                         <StyledDetailsText>Organizer</StyledDetailsText>
                                     </ProfileDetails>
                                 </ImageDetails>
-                                <Outlinebutton color="#865CD0" borderColor="#865CD0" >
+                                <Outlinebutton color="#865CD0" bordercolor="#865CD0" >
                                     <FollowButtonText>Follow</FollowButtonText>
                                 </Outlinebutton>
                             </ProfileSubContainer>

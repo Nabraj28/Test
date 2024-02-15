@@ -7,17 +7,23 @@ import Event from './pages/Event'
 import { Contactus } from './pages/Contactus'
 import Navbar from './components/Navbar'
 import { ThemeProvider } from 'styled-components'
+import './fonts.css'
+
+
+const theme = {
+  poppins: 'Poppins,sans-serif',
+  lora: 'Lora, sans-serif',
+  roboto: 'Roboto, sans-serif',
+  spartan: 'LeagueSpartan, sans-serif',
+  mobile: '768px',
+  largemobile: '425px',
+  pc: '1024px',
+  maincolor: '#865CD0'
+};
+
 
 
 function App() {
-  const theme = {
-    poppins: 'Poppins, sans-serif',
-    lora: 'Lora, sans-serif',
-    mobile: '768px',
-    largemobile: '425px',
-    pc: '1024px',
-    maincolor: '#865CD0'
-  };
   return (
     <ThemeProvider theme={theme} >
       <BrowserRouter>

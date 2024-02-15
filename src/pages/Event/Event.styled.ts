@@ -27,8 +27,9 @@ gap: 30px;
 `
 export const BreadCrum = styled.p`
 
-    font-family: ${({ theme }) => theme.poppins} ;
+    font-family: 'Poppins',sans-serif ;
     padding-left: 10px;
+    font-family: 400px;
     font-size: 18px;
     @media (max-width: ${({ theme }) => theme.mobile}){
     font-size: 14px;

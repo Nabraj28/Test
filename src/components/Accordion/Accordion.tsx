@@ -6,7 +6,7 @@ import { AccordionContainer, AccordionContent, AccordionHeader, AccordionTitle, 
 
 
 const Accordion = ({ title, children }: AccordionProps) => {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
 
     const toggleAccordion = () => {
         setIsOpen(!isOpen);
