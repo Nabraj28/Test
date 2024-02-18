@@ -12,7 +12,7 @@ export const CardMainContainer = styled.section`
     margin-left: -20px;
     display: flex;
     flex-direction: column;
-    gap:10px;
+    gap:20px;
 `
 export const CardFlexContainer = styled.div`
     display: flex;
@@ -182,7 +182,7 @@ export const UpcomingText = styled.p`
     font-family: ${({ theme }) => theme.lora} ;
     font-weight: 600;
     font-size: 28px;
-    padding-left: 10px;
+    padding-left: 25px;
     @media (max-width: ${({ theme }) => theme.mobile}){
        font-size: 20px;
     }
