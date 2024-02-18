@@ -1,9 +1,6 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-interface GalleryProps {
-    isdisabled?: boolean;
-}
 
 export const GalleryMainContainer = styled.section`
     overflow: hidden;
@@ -31,42 +28,72 @@ border-radius: 15px;
        width: 200px;
     }
 `
-export const GalleryNavigationContainer = styled.div`
-display: none;
-@media (min-width: 1024px) {
-    display: none;
-    ${GalleryMainContainer}:hover & {
-        max-width: 100%;
-        display: flex;
-        justify-content: flex-end;
-        padding: 10px;
-        gap: 5px; 
-    }
-}
+export const GalleryLeftButtonContainer = styled.div`
+   position: absolute;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+
+`
+export const GalleryRightButtonContainer = styled.div`
+   position: absolute;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 1;
+    display: flex;
+    align-items: center;
 
 `
 
-const GalleryButtonStyles = css<GalleryProps>`
+export const GalleryLeftButton = styled(IoIosArrowBack)`
+    position: absolute;
+    top: 50%;
+    left: 1%;
+    transform: translateY(-50%);
     background-color: white;
-    
-    cursor: ${({ isdisabled }) => (isdisabled ? "default" : "pointer")};
-    color: ${({ isdisabled }) => (isdisabled ? "#865CD04D" : "#865CD0")};
-    border: 1px solid;
-    border-color: ${({ isdisabled }) => (isdisabled ? "#865CD04D" : "#865CD0")};
-    border-radius: 5px;
+    cursor: pointer;
+    border-radius: 100%;
+    color: ${({ theme }) => theme.maincolor};
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.445);
+    padding: 20px;
     font-size: 25px;
+    opacity: 0;
     transition: opacity 0.3s ease;
-    &:disabled {
-        opacity: 0.5;
-        cursor: default;
+    @media (max-width: ${({ theme }) => theme.pc}){
+        display: none;
+       
+    }
+    ${GalleryLeftButtonContainer}:hover & {
+        opacity: 1;
     }
 `
-export const GalleryLeftButton = styled(IoIosArrowBack) <GalleryProps>`
-    ${GalleryButtonStyles}
-    
-`
-export const GalleryRightButton = styled(IoIosArrowForward) <GalleryProps>`
-   ${GalleryButtonStyles}
-
-
+export const GalleryRightButton = styled(IoIosArrowForward)`
+    position: absolute;
+    top: 50%;
+    right: 1%;
+    transform: translateY(-50%);
+    background-color: white;
+    cursor: pointer;
+    border-radius: 100%;
+    color: ${({ theme }) => theme.maincolor};
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.445);
+    padding: 20px;
+    font-size: 25px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    @media (max-width: ${({ theme }) => theme.pc}){
+        display: none;
+       
+    }
+    ${GalleryRightButtonContainer}:hover & {
+        opacity: 1;
+    }
 `

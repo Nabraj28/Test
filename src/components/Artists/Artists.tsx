@@ -1,37 +1,40 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Artist, ArtistContainer, ArtistImage, ArtistMainContainer, ArtistName, ArtistNavigationContainer, ArtistProfession, LeftButton, RightButton } from './Artist.styled';
+import { Artist, ArtistContainer, ArtistImage, ArtistMainContainer, ArtistName, ArtistProfession, LeftButton, LeftButtonContainer, RightButton, RightButtonContainer } from './Artist.styled';
 import { Artiststypes } from '../../types';
 
 export const Artists: React.FC = () => {
+
     const containerRef = useRef<HTMLDivElement>(null);
-    const [scrollable, setScrollable] = useState<{ left: boolean; right: boolean }>({ left: false, right: false });
+    const [scrollLeft, setScrollLeft] = useState<number>(0);
+    const [scrollWidth, setScrollWidth] = useState<number>(0);
+    const [clientWidth, setClientWidth] = useState<number>(0);
 
     useEffect(() => {
-        const handleScroll = () => {
-            if (containerRef.current) {
-                const { scrollLeft, scrollWidth, clientWidth } = containerRef.current;
-                setScrollable({
-                    left: scrollLeft > 0,
-                    right: scrollLeft + clientWidth < scrollWidth
-                });
-            }
-        };
+        const container = containerRef.current;
+        if (container) {
+            setScrollLeft(container.scrollLeft);
+            setScrollWidth(container.scrollWidth);
+            setClientWidth(container.clientWidth);
 
-        if (containerRef.current) {
-            containerRef.current.addEventListener('scroll', handleScroll);
-            handleScroll();
+            const handleScroll = () => {
+                setScrollLeft(container.scrollLeft);
+                setScrollWidth(container.scrollWidth);
+                setClientWidth(container.clientWidth);
+            };
+
+            container.addEventListener('scroll', handleScroll);
+
+            return () => {
+                container.removeEventListener('scroll', handleScroll);
+            };
         }
-
-        return () => {
-            if (containerRef.current) {
-                containerRef.current.removeEventListener('scroll', handleScroll);
-            }
-        };
     }, []);
 
+
     const handleScroll = (scrollOffset: number) => {
-        const adjustedOffset = window.innerWidth >= 1024 ? 100 : 50;
+        const adjustedOffset = window.innerWidth >= 1024 ? 200 : 100;
         const finalOffset = scrollOffset * adjustedOffset / 100;
+
         if (containerRef.current) {
             containerRef.current.scrollLeft += finalOffset;
         }
@@ -50,6 +53,9 @@ export const Artists: React.FC = () => {
 
     return (
         <ArtistMainContainer>
+            <LeftButtonContainer>
+                {scrollLeft > 0 && <LeftButton onClick={() => handleScroll(-100)} />}
+            </LeftButtonContainer>
             <ArtistContainer ref={containerRef}>
                 {data.map((item) => (
                     <Artist key={item.id}>
@@ -59,10 +65,9 @@ export const Artists: React.FC = () => {
                     </Artist>
                 ))}
             </ArtistContainer>
-            <ArtistNavigationContainer>
-                <LeftButton onClick={() => handleScroll(-200)} isdisabled={!scrollable.left} />
-                <RightButton onClick={() => handleScroll(200)} isdisabled={!scrollable.right} />
-            </ArtistNavigationContainer>
+            <RightButtonContainer>
+                {scrollLeft < scrollWidth - clientWidth && <RightButton onClick={() => handleScroll(100)} />}
+            </RightButtonContainer>
         </ArtistMainContainer>
     );
 };

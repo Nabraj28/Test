@@ -2,42 +2,41 @@
 import { Cardtypes } from '../../types';
 import React, { useRef, useState, useEffect } from 'react';
 
-import { AddButton, AddButtonText, CardButtonContainer, CardCalendarIcon, CardDetails, CardFlexContainer, CardImage, CardInfo, CardLeftButton, CardLocationIcon, CardMainContainer, CardNavBtnContainer, CardNavigationContainer, CardRightButton, CardSubContainer, CardText, CardTitle, DetailsContainer, EventDetails, RupeesImage, RupeesText, UpcomingText } from './Card.styled';
+import { AddButton, AddButtonText, CardButtonContainer, CardCalendarIcon, CardDetails, CardFlexContainer, CardImage, CardInfo, CardLeftButton, CardLeftButtonContainer, CardLocationIcon, CardMainContainer, CardRightButton, CardRightButtonContainer, CardSubContainer, CardText, CardTitle, DetailsContainer, EventDetails, RupeesImage, RupeesText, UpcomingText } from './Card.styled';
 
 
 const Cardslider: React.FC = () => {
 
-
     const containerRef = useRef<HTMLDivElement>(null);
-    const [scrollable, setScrollable] = useState<{ left: boolean; right: boolean }>({ left: false, right: false });
+    const [scrollLeft, setScrollLeft] = useState<number>(0);
+    const [scrollWidth, setScrollWidth] = useState<number>(0);
+    const [clientWidth, setClientWidth] = useState<number>(0);
 
     useEffect(() => {
-        const handleScroll = () => {
-            if (containerRef.current) {
-                const { scrollLeft, scrollWidth, clientWidth } = containerRef.current;
-                setScrollable({
-                    left: scrollLeft > 0,
-                    right: scrollLeft + clientWidth < scrollWidth
-                });
-            }
-        };
+        const container = containerRef.current;
+        if (container) {
+            setScrollLeft(container.scrollLeft);
+            setScrollWidth(container.scrollWidth);
+            setClientWidth(container.clientWidth);
 
-        if (containerRef.current) {
-            containerRef.current.addEventListener('scroll', handleScroll);
-            handleScroll();
+            const handleScroll = () => {
+                setScrollLeft(container.scrollLeft);
+                setScrollWidth(container.scrollWidth);
+                setClientWidth(container.clientWidth);
+            };
+
+            container.addEventListener('scroll', handleScroll);
+
+            return () => {
+                container.removeEventListener('scroll', handleScroll);
+            };
         }
-
-        return () => {
-
-            if (containerRef.current) {
-                containerRef.current.removeEventListener('scroll', handleScroll);
-            }
-        };
     }, []);
 
     const handleScroll = (scrollOffset: number) => {
-        const adjustedOffset = window.innerWidth >= 1024 ? 450 : 200;
+        const adjustedOffset = window.innerWidth >= 1024 ? 400 : 200;
         const finalOffset = scrollOffset * adjustedOffset / 200;
+
         if (containerRef.current) {
             containerRef.current.scrollLeft += finalOffset;
         }
@@ -53,13 +52,10 @@ const Cardslider: React.FC = () => {
     ]
     return (
         <CardMainContainer>
-            <CardNavigationContainer>
-                <UpcomingText>Upcoming Events</UpcomingText>
-                <CardNavBtnContainer>
-                    <CardLeftButton onClick={() => handleScroll(-200)} isdisabled={!(scrollable.left)} />
-                    <CardRightButton onClick={() => handleScroll(200)} isdisabled={!(scrollable.right)} />
-                </CardNavBtnContainer>
-            </CardNavigationContainer>
+            <UpcomingText>Upcoming Events</UpcomingText>
+            <CardLeftButtonContainer>
+                {scrollLeft > 0 && <CardLeftButton onClick={() => handleScroll(-200)} />}
+            </CardLeftButtonContainer>
             <CardFlexContainer ref={containerRef} >
                 {
                     data.map((data) => (
@@ -94,6 +90,9 @@ const Cardslider: React.FC = () => {
 
                 }
             </CardFlexContainer>
+            <CardRightButtonContainer>
+                {scrollLeft < scrollWidth - clientWidth - 1 && <CardRightButton onClick={() => handleScroll(200)} />}
+            </CardRightButtonContainer>
         </CardMainContainer>
     )
 }

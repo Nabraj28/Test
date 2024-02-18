@@ -1,44 +1,44 @@
 import { Gallerytypes } from '../../types'
 import React, { useRef, useState, useEffect } from 'react';
-import { GalleryContainer, GalleryImage, GalleryLeftButton, GalleryMainContainer, GalleryNavigationContainer, GalleryRightButton } from './Gallery.styled';
+import { GalleryContainer, GalleryImage, GalleryLeftButton, GalleryLeftButtonContainer, GalleryMainContainer, GalleryRightButton, GalleryRightButtonContainer } from './Gallery.styled';
 
 
 const Gallery: React.FC = () => {
 
     const containerRef = useRef<HTMLDivElement>(null);
-    const [scrollable, setScrollable] = useState<{ left: boolean; right: boolean }>({ left: false, right: false });
+    const [scrollLeft, setScrollLeft] = useState<number>(0);
+    const [scrollWidth, setScrollWidth] = useState<number>(0);
+    const [clientWidth, setClientWidth] = useState<number>(0);
 
     useEffect(() => {
-        const handleScroll = () => {
-            if (containerRef.current) {
-                const { scrollLeft, scrollWidth, clientWidth } = containerRef.current;
-                setScrollable({
-                    left: scrollLeft > 0,
-                    right: scrollLeft + clientWidth < scrollWidth
-                });
-            }
-        };
+        const container = containerRef.current;
+        if (container) {
+            setScrollLeft(container.scrollLeft);
+            setScrollWidth(container.scrollWidth);
+            setClientWidth(container.clientWidth);
 
-        if (containerRef.current) {
-            containerRef.current.addEventListener('scroll', handleScroll);
-            handleScroll();
+            const handleScroll = () => {
+                setScrollLeft(container.scrollLeft);
+                setScrollWidth(container.scrollWidth);
+                setClientWidth(container.clientWidth);
+            };
+
+            container.addEventListener('scroll', handleScroll);
+
+            return () => {
+                container.removeEventListener('scroll', handleScroll);
+            };
         }
-
-        return () => {
-
-            if (containerRef.current) {
-                containerRef.current.removeEventListener('scroll', handleScroll);
-            }
-        };
     }, []);
 
     const handleScroll = (scrollOffset: number) => {
-        const adjustedOffset = window.innerWidth >= 1024 ? 400 : 200;
-        const finalOffset = scrollOffset * adjustedOffset / 200;
+        const adjustedOffset = window.innerWidth >= 1024 ? 500 : 250;
+        const finalOffset = scrollOffset * adjustedOffset / 250;
+
         if (containerRef.current) {
             containerRef.current.scrollLeft += finalOffset;
         }
-    };
+    }
 
     const data: Gallerytypes[] = [
         { id: 1, src: "/mask.jpg" },
@@ -50,7 +50,9 @@ const Gallery: React.FC = () => {
     ]
     return (
         <GalleryMainContainer>
-
+            <GalleryLeftButtonContainer>
+                {scrollLeft > 0 && <GalleryLeftButton onClick={() => handleScroll(-250)} />}
+            </GalleryLeftButtonContainer>
             <GalleryContainer ref={containerRef} >
                 {
                     data.map((item) => (
@@ -58,10 +60,9 @@ const Gallery: React.FC = () => {
                     ))
                 }
             </GalleryContainer>
-            <GalleryNavigationContainer>
-                <GalleryLeftButton onClick={() => handleScroll(-200)} isdisabled={!scrollable.left} />
-                <GalleryRightButton onClick={() => handleScroll(200)} isdisabled={!scrollable.right} />
-            </GalleryNavigationContainer>
+            <GalleryRightButtonContainer>
+                {scrollLeft < scrollWidth - clientWidth && <GalleryRightButton onClick={() => handleScroll(250)} />}
+            </GalleryRightButtonContainer>
         </GalleryMainContainer>
     )
 }

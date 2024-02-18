@@ -307,3 +307,7 @@ color: ${({ theme }) => theme.maincolor};
         padding-bottom: 10px;
     };
 `
+
+export const DashedBorder = styled.hr`
+border-top: dashed 2px #865CD0 ;
+`

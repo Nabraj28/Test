@@ -1,11 +1,8 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { RiCalendarEventFill } from "react-icons/ri";
 import { SlLocationPin } from "react-icons/sl";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-interface CardButtonProps {
-    isdisabled?: boolean;
-}
 
 export const CardMainContainer = styled.section`
     display: flex;
@@ -190,44 +187,72 @@ export const UpcomingText = styled.p`
        font-size: 20px;
     }
 `
-
-export const CardNavigationContainer = styled.div`
-
-    max-width: 100%;
+export const CardLeftButtonContainer = styled.div`
+   position: absolute;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 1;
     display: flex;
-    justify-content: space-between;
-    padding: 10px;
+    align-items: center;
 
 `
-export const CardNavBtnContainer = styled.div`
-display: none;
-@media (min-width:1024px){
-    display: block;
+export const CardRightButtonContainer = styled.div`
+   position: absolute;
+    top: 0;
+    right: 0;
+    width: 25%;
+    height: 100%;
+    background-color: transparent;
+    z-index: 1;
     display: flex;
-    gap: 5px;
-}
+    align-items: center;
+
 `
-const CardButtonStyles = css<CardButtonProps>`
+
+export const CardLeftButton = styled(IoIosArrowBack)`
+    position: absolute;
+    top: 50%;
+    left: 1%;
+    transform: translateY(-50%);
     background-color: white;
-    
-    cursor: ${({ isdisabled }) => (isdisabled ? "default" : "pointer")};
-    color: ${({ isdisabled }) => (isdisabled ? "#865CD04D" : "#865CD0")};
-    border: 1px solid;
-    border-color: ${({ isdisabled }) => (isdisabled ? "#865CD04D" : "#865CD0")};
-    border-radius: 5px;
+    cursor: pointer;
+    border-radius: 100%;
+    color: ${({ theme }) => theme.maincolor};
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.445);
+    padding: 20px;
     font-size: 25px;
+    opacity: 0;
     transition: opacity 0.3s ease;
-    &:disabled {
-        opacity: 0.5;
-        cursor: default;
+    @media (max-width: ${({ theme }) => theme.pc}){
+        display: none;
+       
+    }
+    ${CardLeftButtonContainer}:hover & {
+        opacity: 1;
     }
 `
-export const CardLeftButton = styled(IoIosArrowBack) <CardButtonProps>`
-    ${CardButtonStyles}
-    
-`
-export const CardRightButton = styled(IoIosArrowForward) <CardButtonProps>`
-   ${CardButtonStyles}
-
-
+export const CardRightButton = styled(IoIosArrowForward)`
+    position: absolute;
+    top: 50%;
+    right: 1%;
+    transform: translateY(-50%);
+    background-color: white;
+    cursor: pointer;
+    border-radius: 100%;
+    color: ${({ theme }) => theme.maincolor};
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.445);
+    padding: 20px;
+    font-size: 25px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    @media (max-width: ${({ theme }) => theme.pc}){
+        display: none;
+       
+    }
+    ${CardRightButtonContainer}:hover & {
+        opacity: 1;
+    }
 `

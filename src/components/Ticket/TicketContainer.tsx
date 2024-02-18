@@ -1,7 +1,7 @@
 
 import TicketAccordion from './TicketAccordion'
 import { LocationData } from '../../types'
-import { BetweenContainer, DayText, DividerImg, DividerImgContainer, DividerMain, FirstSecondPhase, HeadingDateContainer, HeadingLogoText, LocationDivider, Logocontainer, PhaseCostContainer, TicketAddContainer, TicketAddText, TicketDetailsContainer, TicketHeading, TicketHeadingInformation, TicketHeadingText, TicketIconContainer, TicketImage, TicketPrice, TicketSubContainer, TicketWrapper, WeekYearText } from './Ticket.styled'
+import { BetweenContainer, DayText, DividerImg, DashedBorder, DividerImgContainer, DividerMain, FirstSecondPhase, HeadingDateContainer, HeadingLogoText, LocationDivider, Logocontainer, PhaseCostContainer, TicketAddContainer, TicketAddText, TicketDetailsContainer, TicketHeading, TicketHeadingInformation, TicketHeadingText, TicketIconContainer, TicketImage, TicketPrice, TicketSubContainer, TicketWrapper, WeekYearText } from './Ticket.styled'
 import TextAccordion from '../Textaccordion'
 import React from 'react'
 
@@ -82,7 +82,7 @@ export const Ticketdetails: React.FC = () => {
                                         Entry for 1 people, 1 bottle, premium service
                                     </TextAccordion>
 
-                                    <hr />
+                                    <DashedBorder />
 
                                     <BetweenContainer>
                                         <PhaseCostContainer>

@@ -41,7 +41,8 @@ import {
     StyledDetailsText,
     Lowerbody,
     FriendsImage,
-    FriendsIconText
+    FriendsIconText,
+    NumberedListContainer
 } from "./Event.styled"
 
 
@@ -138,18 +139,7 @@ export const Event: React.FC = () => {
                         </Accordion>
                         <Divider />
                         <Accordion title="About" >
-                            <ReadMore children="
-                           Experience the allure of Pokhara, Nepal,
-                           as we invite you to a captivating event nestled in the heart
-                           of this enchanting city. Against the backdrop of the majestic
-                            mountain range, immerse yourself in the rich cultural
-                           tapestry and warm hospitality that define this vibrant destination.
-                           From exploring the local cuisine to engaging in exciting activities,
-                           our event promises an unforgettable experience for seasoned travelers
-                           and first-time visitors alike. Join us as we celebrate the beauty and
-                            traditions of Pokhara, Nepal, in an adventure that will leave lasting
-                            memories.
-                            " />
+                            <ReadMore />
                         </Accordion>
                         <Divider />
                         <Accordion title="Gallery" >
@@ -161,12 +151,12 @@ export const Event: React.FC = () => {
                         </Accordion>
                         <Divider />
                         <Accordion title="Terms and Conditions" >
-                            <>
+                            <NumberedListContainer>
                                 <NumberedList>Registration required for attendance.</NumberedList>
                                 <NumberedList>Consent for photo/video use.</NumberedList>
                                 <NumberedList>Respectful conduct expected.</NumberedList>
                                 <NumberedList>Organizers not liable for injuries or losses.</NumberedList>
-                            </>
+                            </NumberedListContainer>
                         </Accordion>
                         <Divider />
                         <ProfileMainContainer>
