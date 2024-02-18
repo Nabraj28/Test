@@ -15,6 +15,7 @@ export const CardMainContainer = styled.section`
     margin-left: -20px;
     display: flex;
     flex-direction: column;
+    gap:10px;
 `
 export const CardFlexContainer = styled.div`
     display: flex;
@@ -184,20 +185,27 @@ export const UpcomingText = styled.p`
     font-family: ${({ theme }) => theme.lora} ;
     font-weight: 600;
     font-size: 28px;
+    padding-left: 10px;
     @media (max-width: ${({ theme }) => theme.mobile}){
        font-size: 20px;
     }
 `
 
 export const CardNavigationContainer = styled.div`
-max-width: 100%;
-display: flex;
-justify-content: space-between;
-padding: 10px;
+
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
 `
 export const CardNavBtnContainer = styled.div`
-display: flex;
-gap: 5px;
+display: none;
+@media (min-width:1024px){
+    display: block;
+    display: flex;
+    gap: 5px;
+}
 `
 const CardButtonStyles = css<CardButtonProps>`
     background-color: white;

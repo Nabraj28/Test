@@ -1,4 +1,4 @@
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Home } from './pages/Home'
 import { About } from './pages/About'
 import Event from './pages/Event'
@@ -13,6 +13,7 @@ const theme = {
   lora: 'Lora, sans-serif',
   roboto: 'Roboto, sans-serif',
   spartan: 'League Spartan, sans-serif',
+  aquire: 'Aquire, sans-serif',
   mobile: '768px',
   largemobile: '425px',
   pc: '1024px',
@@ -20,16 +21,16 @@ const theme = {
   maincolor: '#865CD0'
 };
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path='/' element={<Navbar />} >
-      <Route index element={<Home />} />
-      <Route path='/about' element={<About />} />
-      <Route path='/event' element={<Event />} />
-      <Route path='/contactus' element={<Contactus />} />
-    </Route>
-  )
-);
+const router = createBrowserRouter([
+  {
+    path: "/", Component: Navbar, children: [
+      { index: true, Component: Home },
+      { path: "/about", Component: About },
+      { path: "/event", Component: Event },
+      { path: "/contactus", Component: Contactus }
+    ]
+  }
+]);
 
 
 

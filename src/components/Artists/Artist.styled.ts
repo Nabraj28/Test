@@ -59,14 +59,16 @@ export const ArtistProfession = styled.p`
 `
 
 export const ArtistNavigationContainer = styled.div`
-max-width: 100%;
 display: none;
-justify-content: flex-end;
-padding: 10px;
-gap: 5px;
-${ArtistMainContainer}:hover & {
-    display: block;
-    display: flex;
+@media (min-width: 1024px) {
+    display: none;
+    ${ArtistMainContainer}:hover & {
+        max-width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px;
+        gap: 5px; 
+    }
 }
 
 `

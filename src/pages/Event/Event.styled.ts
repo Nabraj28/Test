@@ -11,19 +11,19 @@ gap: 60px;
 display: flex;
 flex-direction: column;
 padding-top: 30px;
-gap: 30px;
+gap: 20px;
 @media (max-width: ${({ theme }) => theme.mobile}){
     padding-left:5px;
     padding-right: 5px;
     padding-top: 20px;
-    gap: 20px;
+    gap: 10px;
   }
-@media (max-width: ${({ theme }) => theme.pc}){
-    padding-left:10px;
+  @media (min-width: ${({ theme }) => theme.mobile}) and (max-width: ${({ theme }) => theme.pc}) {
+    padding-left: 10px;
     padding-right: 10px;
     padding-top: 20px;
     gap: 10px;
-  }
+}
 `
 export const BreadCrum = styled.p`
 

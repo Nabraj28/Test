@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export const NavHeader = styled.header`
 padding-bottom: 50px;
-@media (min-width: ${({ theme }) => theme.largemobile})  {
+@media (min-width: ${({ theme }) => theme.mobile})  {
 padding-bottom: 80px;
 }
 `
@@ -33,9 +33,12 @@ export const Logo = styled.section`
     font-weight: 700;
     font-size: 30px;
     color: black;
+    @media (max-width: ${({ theme }) => theme.mobile}){
+     font-family: ${({ theme }) => theme.aquire};
+    }
   }
   @media (max-width: ${({ theme }) => theme.mobile}){
-   padding-left: 5px;
+   padding-left: 20px;
   }
 `
 

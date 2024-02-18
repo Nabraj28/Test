@@ -32,14 +32,16 @@ border-radius: 15px;
     }
 `
 export const GalleryNavigationContainer = styled.div`
-max-width: 100%;
 display: none;
-justify-content: flex-end;
-padding: 10px;
-gap: 5px;
-${GalleryMainContainer}:hover & {
-    display: block;
-    display: flex;
+@media (min-width: 1024px) {
+    display: none;
+    ${GalleryMainContainer}:hover & {
+        max-width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px;
+        gap: 5px; 
+    }
 }
 
 `
