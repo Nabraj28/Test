@@ -274,7 +274,6 @@ export const NumberedList = styled.li`
 font-family: ${({ theme }) => theme.poppins};
 font-weight: 400;
 font-size: 20px;
-list-style-type: decimal;
 text-align: justify;
 color: #000;
 @media (max-width: ${({ theme }) => theme.mobile}){

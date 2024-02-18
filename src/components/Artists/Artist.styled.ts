@@ -60,7 +60,7 @@ export const LeftButtonContainer = styled.div`
    position: absolute;
     top: 0;
     left: 0;
-    width: 25%;
+    width: 10%;
     height: 100%;
     background-color: transparent;
     z-index: 1;
@@ -72,7 +72,7 @@ export const RightButtonContainer = styled.div`
    position: absolute;
     top: 0;
     right: 0;
-    width: 25%;
+    width: 10%;
     height: 100%;
     background-color: transparent;
     z-index: 1;
