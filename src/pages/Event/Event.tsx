@@ -1,4 +1,5 @@
 
+import React from "react"
 import { Accordion, Artists, Button, Cardslider, Footer, Gallery, Outlinebutton, ReadMore, Ticket, Video } from "../../components"
 import {
     BreadCrum,
@@ -39,11 +40,12 @@ import {
     FollowButtonText,
     StyledDetailsText,
     Lowerbody,
-    UpcomingText
+    FriendsImage,
+    FriendsIconText
 } from "./Event.styled"
 
 
-export const Event = () => {
+export const Event: React.FC = () => {
     return (
         <StyledContainer>
             <BreadCrum>
@@ -173,10 +175,10 @@ export const Event = () => {
                                     <ProfileImage src="/mask.jpg" />
                                     <ProfileDetails>
                                         <ProfileName>Harry Potter</ProfileName>
-                                        <IconTextContainer>
-
+                                        <FriendsIconText>
+                                            <FriendsImage src="/Friends.svg" alt="" />
                                             <DetailsText>50 Followers</DetailsText>
-                                        </IconTextContainer>
+                                        </FriendsIconText>
                                         <StyledDetailsText>Organizer</StyledDetailsText>
                                     </ProfileDetails>
                                 </ImageDetails>
@@ -192,20 +194,9 @@ export const Event = () => {
                 </StyledTicketContainer>
             </StyledUpperbody>
             <Lowerbody>
-                <UpcomingText>Upcoming Events</UpcomingText>
                 <Cardslider />
             </Lowerbody>
             <Footer />
         </StyledContainer>
     )
 }
-//         <div className="part2" >
-//             <Ticket />
-//         </div>
-//     </div >
-//     <div className="lowerbody" >
-//         <p className="upcoming" >Upcoming Events</p>
-//         <Cardslider />
-//     </div>
-//     <Footer />
-// </div>

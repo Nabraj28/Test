@@ -2,3 +2,35 @@
     margin: 0;
     padding: 0;
 }
+
+@font-face {
+    font-family: 'Poppins';
+    src:
+        url('./assets/Poppins-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lora';
+    src:
+        url('./assets/Lora-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src:
+        url('./assets/Roboto-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'League Spartan';
+    src:
+        url('./assets/LeagueSpartan-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -3,8 +3,9 @@ import TicketAccordion from './TicketAccordion'
 import { LocationData } from '../../types'
 import { BetweenContainer, DayText, DividerImg, DividerImgContainer, DividerMain, FirstSecondPhase, HeadingDateContainer, HeadingLogoText, LocationDivider, Logocontainer, PhaseCostContainer, TicketAddContainer, TicketAddText, TicketDetailsContainer, TicketHeading, TicketHeadingInformation, TicketHeadingText, TicketIconContainer, TicketImage, TicketPrice, TicketSubContainer, TicketWrapper, WeekYearText } from './Ticket.styled'
 import TextAccordion from '../Textaccordion'
+import React from 'react'
 
-export const Ticketdetails = () => {
+export const Ticketdetails: React.FC = () => {
 
     const data: LocationData[] = [
         {
@@ -40,7 +41,7 @@ export const Ticketdetails = () => {
                                         </HeadingDateContainer>
                                         <DividerMain>
                                             <DividerImgContainer>
-                                                {Array.from({ length: 15 }).map((_, index) => (
+                                                {Array.from({ length: 7 }).map((_, index) => (
                                                     <DividerImg key={index} src="/dot.svg" alt="divider" />
                                                 ))}
                                             </DividerImgContainer>
@@ -105,7 +106,7 @@ export const Ticketdetails = () => {
         </>
     )
 }
-const TicketContainer = () => {
+const TicketContainer: React.FC = () => {
     return (
         <div>
             <Ticketdetails />

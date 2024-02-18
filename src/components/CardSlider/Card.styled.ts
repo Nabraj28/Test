@@ -1,7 +1,11 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { RiCalendarEventFill } from "react-icons/ri";
 import { SlLocationPin } from "react-icons/sl";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+
+interface CardButtonProps {
+    isdisabled?: boolean;
+}
 
 export const CardMainContainer = styled.section`
     display: flex;
@@ -9,10 +13,12 @@ export const CardMainContainer = styled.section`
     position: relative;
     scrollbar-width: none;
     margin-left: -20px;
+    display: flex;
+    flex-direction: column;
 `
 export const CardFlexContainer = styled.div`
     display: flex;
-    gap: 20px;
+    gap: 30px;
     overflow-x: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -28,13 +34,11 @@ export const CardFlexContainer = styled.div`
 export const CardSubContainer = styled.div`
     width: 450px;
     aspect-ratio: 1/1;
-    margin-right: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     border-radius: 10px;
-    margin-right: 10px;
     flex-shrink: 0;
     border-radius: 15px;
-    box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.43);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
     @media (max-width: ${({ theme }) => theme.mobile}){
         width: 250px;
         aspect-ratio: 25/27;
@@ -176,49 +180,46 @@ color: ${({ theme }) => theme.maincolor};
        font-family: ${({ theme }) => theme.lora};
     }
 `
-export const CardLeftButton = styled(IoIosArrowBack)`
-    position: absolute;
-    top: 50%;
-    left: 1%;
-    transform: translateY(-50%);
-    background-color: white;
-    cursor: pointer;
-    border-radius: 100%;
-    color: ${({ theme }) => theme.maincolor};
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.445);
-    padding: 20px;
-    font-size: 25px;
-    opacity: 0;
-    z-index: 1;
-    transition: opacity 0.3s ease;
-    @media (max-width: ${({ theme }) => theme.pc}){
-        display: none;
-       
-    }
-    ${CardMainContainer}:hover & {
-        opacity: 1;
+export const UpcomingText = styled.p`
+    font-family: ${({ theme }) => theme.lora} ;
+    font-weight: 600;
+    font-size: 28px;
+    @media (max-width: ${({ theme }) => theme.mobile}){
+       font-size: 20px;
     }
 `
-export const CardRightButton = styled(IoIosArrowForward)`
-    position: absolute;
-    top: 50%;
-    right: 1%;
-    transform: translateY(-50%);
+
+export const CardNavigationContainer = styled.div`
+max-width: 100%;
+display: flex;
+justify-content: space-between;
+padding: 10px;
+`
+export const CardNavBtnContainer = styled.div`
+display: flex;
+gap: 5px;
+`
+const CardButtonStyles = css<CardButtonProps>`
     background-color: white;
-    cursor: pointer;
-    border-radius: 100%;
-    color: ${({ theme }) => theme.maincolor};
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.445);
-    padding: 20px;
+    
+    cursor: ${({ isdisabled }) => (isdisabled ? "default" : "pointer")};
+    color: ${({ isdisabled }) => (isdisabled ? "#865CD04D" : "#865CD0")};
+    border: 1px solid;
+    border-color: ${({ isdisabled }) => (isdisabled ? "#865CD04D" : "#865CD0")};
+    border-radius: 5px;
     font-size: 25px;
-    opacity: 0;
-    z-index: 1;
     transition: opacity 0.3s ease;
-    @media (max-width: ${({ theme }) => theme.pc}){
-        display: none;
-       
+    &:disabled {
+        opacity: 0.5;
+        cursor: default;
     }
-    ${CardMainContainer}:hover & {
-        opacity: 1;
-    }
+`
+export const CardLeftButton = styled(IoIosArrowBack) <CardButtonProps>`
+    ${CardButtonStyles}
+    
+`
+export const CardRightButton = styled(IoIosArrowForward) <CardButtonProps>`
+   ${CardButtonStyles}
+
+
 `

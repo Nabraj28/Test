@@ -37,8 +37,8 @@ const AccordionContent = styled.div`
 
 
 
-const TextAccordion = ({ children, }: TextAccordionProps) => {
-    const [isOpen, setIsOpen] = useState(true);
+const TextAccordion: React.FC<TextAccordionProps> = ({ children, }) => {
+    const [isOpen, setIsOpen] = useState(false);
 
     const toggleAccordion = () => {
         setIsOpen(!isOpen);

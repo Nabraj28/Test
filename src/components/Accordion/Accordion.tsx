@@ -1,11 +1,11 @@
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { AccordionProps } from '../../types';
 import { AccordionContainer, AccordionContent, AccordionHeader, AccordionTitle, DownIcon, UpIcon } from './Accordion.styled';
 
 
 
-const Accordion = ({ title, children }: AccordionProps) => {
+const Accordion: React.FC<AccordionProps> = ({ title, children }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleAccordion = () => {

@@ -1,9 +1,10 @@
 
+import React from "react";
 import { Buttonprops } from "../../types";
 import { TagsButton } from "./Button.styled";
 
 
-const Button = ({ children, color, backgroundcolor }: Buttonprops) => {
+const Button: React.FC<Buttonprops> = ({ children, color, backgroundcolor }) => {
 
 
     return (

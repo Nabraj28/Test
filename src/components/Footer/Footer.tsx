@@ -1,3 +1,4 @@
+import React from 'react';
 import {
     CallIcon,
     FooterCard,
@@ -12,7 +13,7 @@ import {
 } from './Footer.styled';
 
 
-const Footer = () => {
+const Footer: React.FC = () => {
     return (
         <FooterContainer>
             <FooterCard>

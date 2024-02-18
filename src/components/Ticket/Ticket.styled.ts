@@ -2,10 +2,8 @@ import styled from "styled-components";
 
 export const TicketMainContainer = styled.section`
     padding-left: 10px;
-    /* padding-right: 10px; */
     display: flex;
     flex-direction: column;
-    gap: 22px;
 `
 
 export const SelectTicketText = styled.p`
@@ -17,12 +15,10 @@ export const SelectTicketText = styled.p`
 `
 export const TicketAccordionContainer = styled.div`
     border: none;
-    margin-bottom: 10px;
     padding-left: 10px;
     padding-right: 0px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
     overflow: hidden;
 `
 export const TicketAccordionHeader = styled.div`
@@ -66,6 +62,7 @@ export const LocationDivider = styled.div`
     font-weight: 600;
     margin-left: 5px;
     margin-right: 5px;
+    padding-top: 20px;
 
     &::before,
     &::after {
@@ -78,7 +75,7 @@ export const LocationDivider = styled.div`
 `
 
 export const TicketHeading = styled.div`
-    width: 100%;
+    max-width: 100%;
     border-radius: 15px;
     background-color: ${({ theme }) => theme.maincolor};
     display: flex;
@@ -88,43 +85,66 @@ export const TicketHeading = styled.div`
 export const HeadingDateContainer = styled.div`
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 10px;
-    width: 20%;
+    padding-left: 10px;
+    padding-right: 10px;
 `
 export const WeekYearText = styled.p`
     font-family: ${({ theme }) => theme.poppins};
     font-size: 20px;
     font-weight: 200;
     color: white;
+    text-align: center;
+    @media (min-width: ${({ theme }) => theme.pc}) and (max-width: ${({ theme }) => theme.largepc}) {
+        font-size: 14px;
+    }
+    @media (min-width: ${({ theme }) => theme.largepc}) {
+        font-size: 20px;
+    }
 `
 export const DayText = styled.p`
     font-family: ${({ theme }) => theme.poppins};
     font-size: 35px;
     font-weight: 500;
     color: white;
+    text-align: center;
+    @media (min-width: ${({ theme }) => theme.pc}) and (max-width: ${({ theme }) => theme.largepc}) {
+        font-size: 20px;
+    }
 `
 
 export const DividerMain = styled.div`
-    width: 3%;
-    height: 150px;
+    max-width: 10px;
     display: flex;
     align-items: center;
+    padding-top: 2px;
 `;
 
 export const DividerImgContainer = styled.div`
-    width: 100%;
-    max-height: 90%;
     display: flex;
+    justify-content: start;
     flex-direction: column;
-    gap: 10px;
-    overflow-y: hidden;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    gap: 12px;
+    overflow: hidden;
+    @media (min-width: ${({ theme }) => theme.pc}) and (max-width: ${({ theme }) => theme.largepc}) {
+        gap: 7px;
+    }
+    @media (min-width: ${({ theme }) => theme.largepc}) {
+        gap: 10px;
+    }
 `;
 
 export const DividerImg = styled.img`
     width: 10px;
     height: 10px;
     object-fit: cover;
+    @media (min-width: ${({ theme }) => theme.pc}) and (max-width: ${({ theme }) => theme.largepc}) {
+        width: 7px;
+        height: 7px;
+    }
 `;
 
 export const TicketHeadingInformation = styled.div`
@@ -133,11 +153,26 @@ export const TicketHeadingInformation = styled.div`
     gap: 10px;
     justify-content: center;
     padding: 10px 10px 10px 20px;
+    @media (min-width: ${({ theme }) => theme.pc}) and (max-width: ${({ theme }) => theme.largepc}) {
+        padding: 10px 5px 5px 10px;
+        gap:5px;
+    }
+    @media (min-width: ${({ theme }) => theme.largepc}) {
+        padding: 10px 10px 10px 20px;
+    }
 `;
 
 export const Logocontainer = styled.img`
     width: 25px;
     height: 25px;
+    @media (min-width: ${({ theme }) => theme.pc}) and (max-width: ${({ theme }) => theme.largepc}) {
+        width: 16px;
+        height: 16px;
+    }
+    @media (min-width: ${({ theme }) => theme.largepc}) {
+        width: 25px;
+        height: 25px;
+    }
 `;
 
 export const HeadingLogoText = styled.div`
@@ -152,18 +187,27 @@ export const TicketIconContainer = styled.div`
 `;
 
 export const TicketWrapper = styled.div`
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     background-color: white;
     border-radius: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (min-width: ${({ theme }) => theme.pc}) and (max-width: ${({ theme }) => theme.largepc}) {
+        width: 30px;
+        height: 30px;
+    }
+    
 `;
 
 export const TicketImage = styled.img`
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
+    @media (min-width: ${({ theme }) => theme.pc}) and (max-width: ${({ theme }) => theme.largepc}) {
+        width: 20px;
+        height: 20px;
+    }
 `;
 
 export const TicketHeadingText = styled.p`
@@ -171,6 +215,12 @@ export const TicketHeadingText = styled.p`
     font-size: 20px;
     font-weight: 200;
     color: white;
+    @media (min-width: ${({ theme }) => theme.pc}) and (max-width: ${({ theme }) => theme.largepc}) {
+        font-size: 14px;
+    }
+    @media (min-width: ${({ theme }) => theme.largepc}) {
+        font-size: 20px;
+    }
 `
 
 export const TicketDetailsContainer = styled.div`
@@ -193,7 +243,7 @@ export const PhaseCostContainer = styled.div`
 export const TicketAddContainer = styled.div`
     width: 25%;
     background-color: #875cd03f;
-    border-radius: 25px;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -205,12 +255,18 @@ export const TicketAddText = styled.p`
     color: ${({ theme }) => theme.maincolor};
     font-family: ${({ theme }) => theme.poppins};
     font-size: 20px;
+    @media (min-width: ${({ theme }) => theme.pc}) and (max-width: ${({ theme }) => theme.largepc}) {
+        font-size: 16px;
+    }
 `;
 
 export const FirstSecondPhase = styled.p`
     font-family: ${({ theme }) => theme.poppins};
     font-weight: 600;
     font-size: 20px;
+    @media (min-width: ${({ theme }) => theme.pc}) and (max-width: ${({ theme }) => theme.largepc}) {
+        font-size: 16px;
+    }
 `;
 
 export const TicketPrice = styled.p`
@@ -218,5 +274,36 @@ export const TicketPrice = styled.p`
     font-weight: 600;
     font-size: 20px;
     color: ${({ theme }) => theme.maincolor};
+    @media (min-width: ${({ theme }) => theme.pc}) and (max-width: ${({ theme }) => theme.largepc}) {
+        font-size: 16px;
+    }
 `;
 
+export const ProceedButtonCotainer = styled.div`
+margin-top: 20px;
+margin-left: 10px;
+margin-right: 10px;
+padding: 10px;
+box-shadow: 0 2px 5px #0000001A;
+`
+export const ProceedButton = styled.button`
+width: 100%;
+border: none;
+cursor: pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #865CD04D ;
+padding-top: 15px;
+padding-bottom: 15px;
+border-radius: 10px;
+font-family:${({ theme }) => theme.poppins} ;
+font-size: 20px;
+font-weight: 600;
+color: ${({ theme }) => theme.maincolor};
+@media (min-width: ${({ theme }) => theme.pc}) and (max-width: ${({ theme }) => theme.largepc}) {
+        font-size: 16px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    };
+`

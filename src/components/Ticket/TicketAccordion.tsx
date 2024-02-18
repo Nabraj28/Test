@@ -8,7 +8,7 @@ interface Accordionticketprops {
 }
 
 
-const TicketAccordion = ({ element, children }: Accordionticketprops) => {
+const TicketAccordion: React.FC<Accordionticketprops> = ({ element, children }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleAccordion = () => {

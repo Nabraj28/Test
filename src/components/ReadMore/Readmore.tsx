@@ -1,11 +1,11 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { About, AboutContainer, More, ReadMoreText } from "./Readmore.styled";
 
 interface ReadMoreProps {
     children: string;
 }
 
-const ReadMore = ({ children }: ReadMoreProps) => {
+const ReadMore: React.FC<ReadMoreProps> = ({ children }) => {
     const text: string = children;
     const [isReadMore, setIsReadMore] = useState<boolean>(true);
 

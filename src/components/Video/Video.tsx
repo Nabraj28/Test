@@ -1,6 +1,7 @@
+import React from "react"
 import { Iframe } from "./Video.styled"
 
-const Video = () => {
+const Video: React.FC = () => {
 
     return (
         <Iframe

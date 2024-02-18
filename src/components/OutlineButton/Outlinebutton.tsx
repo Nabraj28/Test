@@ -1,11 +1,12 @@
 
+import React from "react";
 import { OutlineButtonProps } from "../../types";
 import { StyledOutlineButton } from "./Outline.styled";
 
 
 
 
-const Outlinebutton = ({ children, color, bordercolor }: OutlineButtonProps) => {
+const Outlinebutton: React.FC<OutlineButtonProps> = ({ children, color, bordercolor }) => {
 
 
 

@@ -1,6 +1,13 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
+export const NavHeader = styled.header`
+padding-bottom: 50px;
+@media (min-width: ${({ theme }) => theme.largemobile})  {
+padding-bottom: 80px;
+}
+`
+
 export const Nav = styled.nav`
     width: 100%;
     height: 80px;
@@ -23,7 +30,7 @@ export const Logo = styled.section`
   padding-left: 70px;
   p{
     font-family: "League Spartan",sans-serif;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 30px;
     color: black;
   }
@@ -73,6 +80,7 @@ export const StyledNavLink = styled(NavLink)`
     font-weight: 700;
 
   &.active {
+    padding-bottom: 3px;
     border-bottom: 3px solid #D4A373;
   }
 `

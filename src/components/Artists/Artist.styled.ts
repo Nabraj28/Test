@@ -1,6 +1,9 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
+interface ButtonProps {
+    isdisabled?: boolean;
+}
 
 export const ArtistMainContainer = styled.section`
     overflow: hidden;
@@ -54,47 +57,41 @@ export const ArtistProfession = styled.p`
     }
 
 `
-export const LeftButton = styled(IoIosArrowBack)`
-    position: absolute;
-    top: 50%;
-    left: 1%;
-    transform: translateY(-50%);
+
+export const ArtistNavigationContainer = styled.div`
+max-width: 100%;
+display: none;
+justify-content: flex-end;
+padding: 10px;
+gap: 5px;
+${ArtistMainContainer}:hover & {
+    display: block;
+    display: flex;
+}
+
+`
+
+const ButtonStyles = css<ButtonProps>`
     background-color: white;
-    cursor: pointer;
-    border-radius: 100%;
-    color: ${({ theme }) => theme.maincolor};
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.445);
-    padding: 20px;
+    
+    cursor: ${({ isdisabled }) => (isdisabled ? "default" : "pointer")};
+    color: ${({ isdisabled }) => (isdisabled ? "#865CD04D" : "#865CD0")};
+    border: 1px solid;
+    border-color: ${({ isdisabled }) => (isdisabled ? "#865CD04D" : "#865CD0")};
+    border-radius: 5px;
     font-size: 25px;
-    opacity: 0;
     transition: opacity 0.3s ease;
-    @media (max-width: ${({ theme }) => theme.pc}){
-        display: none;
-       
-    }
-    ${ArtistMainContainer}:hover & {
-        opacity: 1;
+    &:disabled {
+        opacity: 0.5;
+        cursor: default;
     }
 `
-export const RightButton = styled(IoIosArrowForward)`
-    position: absolute;
-    top: 50%;
-    right: 1%;
-    transform: translateY(-50%);
-    background-color: white;
-    cursor: pointer;
-    border-radius: 100%;
-    color: ${({ theme }) => theme.maincolor};
-    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.445);
-    padding: 20px;
-    font-size: 25px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    @media (max-width: ${({ theme }) => theme.pc}){
-        display: none;
-       
-    }
-    ${ArtistMainContainer}:hover & {
-        opacity: 1;
-    }
+export const LeftButton = styled(IoIosArrowBack) <ButtonProps>`
+    ${ButtonStyles}
+    
+`
+export const RightButton = styled(IoIosArrowForward) <ButtonProps>`
+   ${ButtonStyles}
+
+
 `

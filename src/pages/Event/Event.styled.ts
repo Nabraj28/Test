@@ -22,7 +22,7 @@ gap: 30px;
     padding-left:10px;
     padding-right: 10px;
     padding-top: 20px;
-    gap: 20px;
+    gap: 10px;
   }
 `
 export const BreadCrum = styled.p`
@@ -48,10 +48,13 @@ export const StyledUpperbody = styled.div`
     width: 100%;
     display: flex;
     gap: 80px;
+    @media (min-width: ${({ theme }) => theme.pc}) and (max-width: ${({ theme }) => theme.largepc}) {
+        gap: 50px;
+    }
 `
 
 export const StyledEventDetails = styled.div`
-    max-width: 60%;
+    width: 60%;
     overflow: hidden;
     padding: 10px;
     width: 60%;
@@ -60,6 +63,7 @@ export const StyledEventDetails = styled.div`
     flex-direction: column;
     @media (max-width: ${({ theme }) => theme.pc}) {
     width: 100%;
+    padding: 5px;
   }
 `
 export const StyledTicketContainer = styled.div`
@@ -354,12 +358,23 @@ export const Lowerbody = styled.section`
        gap: 0px;
     }
 `
-export const UpcomingText = styled.p`
-    font-family: ${({ theme }) => theme.lora} ;
-    font-weight: 600;
-    font-size: 28px;
+
+export const FriendsIconText = styled.div`
+  display: flex;
+  gap:10px;
+  align-items: center;
+  @media (max-width: ${({ theme }) => theme.mobile}){
+       gap: 5px;
+  }
+`
+
+export const FriendsImage = styled.img`
+    width: 20px;
+    height: 20px;
+    color: ${({ theme }) => theme.maincolor};
     @media (max-width: ${({ theme }) => theme.mobile}){
-       font-size: 20px;
+       width:16px;
+       height: 16px;
     }
 `
 
