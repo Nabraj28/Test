@@ -263,12 +263,11 @@ font-family: ${({ theme }) => theme.poppins};
        font-size: 20px;
     }
 `
-export const NumberedListContainer = styled.div`
+export const NumberedListContainer = styled.ul`
 display: flex;
 flex-direction: column;
 gap:5px;
 padding-top: 5px;
-
 `
 
 export const NumberedList = styled.li`

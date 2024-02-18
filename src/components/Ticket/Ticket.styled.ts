@@ -309,5 +309,7 @@ color: ${({ theme }) => theme.maincolor};
 `
 
 export const DashedBorder = styled.hr`
+border: none;
 border-top: dashed 2px #865CD0 ;
+margin: 0;
 `

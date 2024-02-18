@@ -47,4 +47,7 @@ padding: 10px 20px ;
 @media (max-width: ${({ theme }) => theme.mobile}){
        padding: 5px 10px;
     }
+    ul {
+        padding-left: 20px;
+    }
 `

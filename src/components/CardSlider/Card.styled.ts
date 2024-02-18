@@ -191,7 +191,7 @@ export const CardLeftButtonContainer = styled.div`
    position: absolute;
     top: 0;
     left: 0;
-    width: 25%;
+    width: 10%;
     height: 100%;
     background-color: transparent;
     z-index: 1;
@@ -203,7 +203,7 @@ export const CardRightButtonContainer = styled.div`
    position: absolute;
     top: 0;
     right: 0;
-    width: 25%;
+    width: 10%;
     height: 100%;
     background-color: transparent;
     z-index: 1;
@@ -215,7 +215,7 @@ export const CardRightButtonContainer = styled.div`
 export const CardLeftButton = styled(IoIosArrowBack)`
     position: absolute;
     top: 50%;
-    left: 1%;
+    left: 5%;
     transform: translateY(-50%);
     background-color: white;
     cursor: pointer;
@@ -237,7 +237,7 @@ export const CardLeftButton = styled(IoIosArrowBack)`
 export const CardRightButton = styled(IoIosArrowForward)`
     position: absolute;
     top: 50%;
-    right: 1%;
+    right: 5%;
     transform: translateY(-50%);
     background-color: white;
     cursor: pointer;

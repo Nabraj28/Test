@@ -84,7 +84,7 @@ export const RightButtonContainer = styled.div`
 export const LeftButton = styled(IoIosArrowBack)`
     position: absolute;
     top: 50%;
-    left: 1%;
+    left: 5%;
     transform: translateY(-50%);
     background-color: white;
     cursor: pointer;
@@ -106,7 +106,7 @@ export const LeftButton = styled(IoIosArrowBack)`
 export const RightButton = styled(IoIosArrowForward)`
     position: absolute;
     top: 50%;
-    right: 1%;
+    right: 5%;
     transform: translateY(-50%);
     background-color: white;
     cursor: pointer;

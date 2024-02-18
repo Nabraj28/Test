@@ -56,7 +56,7 @@ export const GalleryRightButtonContainer = styled.div`
 export const GalleryLeftButton = styled(IoIosArrowBack)`
     position: absolute;
     top: 50%;
-    left: 1%;
+    left: 5%;
     transform: translateY(-50%);
     background-color: white;
     cursor: pointer;
@@ -78,7 +78,7 @@ export const GalleryLeftButton = styled(IoIosArrowBack)`
 export const GalleryRightButton = styled(IoIosArrowForward)`
     position: absolute;
     top: 50%;
-    right: 1%;
+    right: 5%;
     transform: translateY(-50%);
     background-color: white;
     cursor: pointer;
